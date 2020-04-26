@@ -1,0 +1,10 @@
+@import url(./__title/info__title.css);
+@import url(./__subtitle/info__subtitle.css);
+@import url(./__text/info__text.css);
+@import url(./__text-keyword/info__text-keyword.css);
+
+.info {
+    max-width: 1232px;
+    margin: 0 auto;
+    width: calc(100% - 208px);
+}

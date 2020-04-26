@@ -1,0 +1,13 @@
+.search__container {
+    display: flex;
+    flex-direction: column;
+    /* padding-left: 29%; */
+    max-width: 608px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+    .search__container   {   
+        max-width: 450px;
+    }
+}

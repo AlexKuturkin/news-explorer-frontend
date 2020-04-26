@@ -1,0 +1,12 @@
+.header__hamburger {
+    background: transparent;
+    border: none;
+    display: none;
+    padding: 0;
+}
+
+@media screen and (max-width: 769px) {
+    .header__hamburger   {   
+        display: inline;
+    }
+}

@@ -1,0 +1,13 @@
+.header__button {
+    font-size: 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    padding: 10px 17px;
+    background-color: transparent;
+}
+
+.header__button:focus {
+    outline: 1px solid #347EFF;
+}

@@ -1,0 +1,9 @@
+.header__nav-link_active-secondary {
+    border-bottom: 3px solid #1a1b22;
+}
+
+@media screen and (max-width: 769px) {
+    .header__nav-link_active-secondary  {   
+        border-bottom: none;
+    }
+}

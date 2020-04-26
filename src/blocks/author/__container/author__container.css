@@ -1,0 +1,6 @@
+.author__container {
+    max-width: 1232px;
+    width: calc(100% - 208px);
+    margin: 80px auto;
+    display: flex;
+}

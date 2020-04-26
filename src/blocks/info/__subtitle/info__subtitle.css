@@ -1,0 +1,9 @@
+.info__subtitle {
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+    font-family: Roboto Slab, Helvetica, Arial, sans-serif; 
+    font-weight: 400;
+    margin: 0 0 30px;
+    max-width: 532px;
+}

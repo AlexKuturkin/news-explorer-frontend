@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="desciption" content="News Explorer — поиск новостей. Сохранённые статьи">
+  <meta name="author" content="Алексей Кутуркин">
+  <title>News Explorer | Saved articles</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.secondary.css %>" />
+  <link rel="shortcut icon" href=".<%=require('../images/favicon.ico') %>" type="image/x-icon">
+</head>
+
+<body>
+  <!--   Hello, I am secondary page!
+  <img src=".<%= require('../images/fz.jpg')%>" alt="fz" />
+  <footer> copyright, 2020</footer> 
+  <a href="../index.html">to main page</a>
+   -->
+  <header class="header header_black">
+    <div class="header__container">
+      <h2 class="header__title">NewsExplorer</h2>
+      <nav class="header__nav">
+        <a href="../index.html" class="header__nav-link header__nav-link_black">Главная</a>
+        <a href="secondary.html"
+          class="header__nav-link header__nav-link_save header__nav-link_black header__nav-link_active header__nav-link_active-secondary">Сохранённые
+          статьи</a>
+        <button type="button" class="header__button header__button_black">Грета <img class="header__button-logout"
+            src=".<%= require('../images/logout.png')%>" alt="выход" /> </button>
+      </nav>
+      <button class="header__hamburger"><svg class="header__toggle" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="16" height="2" fill="black" />
+          <rect x="4" y="14" width="16" height="2" fill="black" />
+        </svg></button>
+    </div>
+  </header>
+  <main>
+    <section class="info">
+      <div>
+        <h4 class="info__title">Сохранённые статьи</h4>
+        <h1 class="info__subtitle">Грета, у вас 5 сохранённых статей</h1>
+        <p class="info__text">По ключевым словам: <span class="info__text-keyword">Природа</span>, <span
+            class="info__text-keyword">Тайга</span> и <span class="info__text-keyword">2 другим</span> </p>
+      </div>
+    </section>
+    <section class="articles">
+      <div class="articles__list">
+        <div class="articles__card">
+          <a href="../index.html" class="articles__link" target="_blank">
+            <div class="articles__card-image-container">
+              <img class="articles__card-image" alt="листья цветка"
+                src=".<%= require('../images/articles__card-image.png') %>">
+            </div>
+            <div class="articles__card-info">
+              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
+              <h4 class="articles__card-info-title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
+              <p class="articles__card-info-text">Знаменитый фотограф снимает первозданные леса России, чтобы
+                рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где он
+                нашёл
+              </p>
+              <span class="articles__card-info-source">риа</span>
+            </div>
+          </a>
+          <span class="articles__card-image-keyword">Тайга</span>
+          <span class="articles__card-image-hint">Убрать из сохранённых</span>
+          <button type="button" class="articles__card-image-button">
+            <svg class="articles__card-image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="articles__card">
+          <a href="../index.html" class="articles__link" target="_blank">
+            <div class="articles__card-image-container">
+              <img class="articles__card-image" alt="листья цветка"
+                src=".<%= require('../images/articles__card-image.png') %>">
+            </div>
+            <div class="articles__card-info">
+              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
+              <h4 class="articles__card-info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="articles__card-info-text">Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть
+                ускользающую красоту одного
+                из местных чудес природы.</p>
+              <span class="articles__card-info-source">медуза</span>
+            </div>
+          </a>
+          <span class="articles__card-image-keyword">Природа</span>
+          <span class="articles__card-image-hint">Убрать из сохранённых</span>
+          <button type="button" class="articles__card-image-button">
+            <svg class="articles__card-image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" />
+            </svg></button>
+        </div>
+
+        <div class="articles__card">
+          <a href="../index.html" class="articles__link" target="_blank">
+            <div class="articles__card-image-container">
+              <img class="articles__card-image" alt="листья цветка"
+                src=".<%= require('../images/articles__card-image.png') %>">
+            </div>
+            <div class="articles__card-info">
+              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
+              <h4 class="articles__card-info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="articles__card-info-text">Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть
+                ускользающую красоту одного
+                из местных чудес природы.</p>
+              <span class="articles__card-info-source">медуза</span>
+            </div>
+          </a>
+          <span class="articles__card-image-keyword">Природа</span>
+          <span class="articles__card-image-hint">Убрать из сохранённых</span>
+          <button type="button" class="articles__card-image-button">
+            <svg class="articles__card-image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" />
+            </svg></button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <span class="footer__copyright">© 2020 Supersite, Powered by News <abbr>API</abbr></span>
+      <div class="footer__nav-container">
+        <nav class="footer__nav">
+          <a href="index.html" class="footer__link">Главная</a>
+          <a href="https://praktikum.yandex.ru" target="_blank" class="footer__link">Яндекс.Практикум</a>
+        </nav>
+        <ul class="footer__list">
+          <a href="https://github.com/AlexKuturkin" target="_blank">
+            <li><img src=".<%= require('../images/github.png') %>" alt="github"></li>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100007045992616" target="_blank">
+            <li><img src=".<%= require('../images/fb.png') %>" alt="facebook"></li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+<script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
+
+</html>

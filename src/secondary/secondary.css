@@ -1,0 +1,19 @@
+/* @import url(../vendor/normalize.css); */
+/* @import url(../blocks/header/header.css);
+@import url(../blocks/header/_black/header_black.css);
+@import url(../blocks/header/__nav-link/_black/header__nav-link_black.css); */
+
+@import url(../vendor/fonts.css);
+@import url(../blocks/header/header_for_articles.css);
+@import url(../blocks/info/info.css);
+@import url(../blocks/articles/articles_for_articles.css);
+@import url(../blocks/footer/footer.css);
+
+/* body, html {
+	 background: green;
+	background-image: url('../images/kingpin.jpg'); 
+} */
+
+body {
+	margin: 0
+}

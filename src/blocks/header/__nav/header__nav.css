@@ -1,0 +1,22 @@
+@import url(./_gamburger/header__nav_gamburger.css);
+
+.header__nav {
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;  
+}
+
+@media screen and (max-width: 769px) {
+    .header__nav   {   
+        font-size: 16px;
+        display: none; 
+        position: absolute;
+        flex-direction: column;
+        top: -12px;
+        left: 0;
+        width: 100%;
+        padding-top: 50px;
+    }
+}
