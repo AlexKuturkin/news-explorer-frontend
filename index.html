@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="desciption" content="News Explorer — поиск новостей">
+  <meta name="author" content="Алексей Кутуркин">
+  <title>News Explorer</title>
+  <link rel="stylesheet" href="main/main.bc269088b1642238c267.css" />
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Hello, I am main page!
+  <picture>
+    <source media="(max-width: 400px)" srcset="./images/faceoff_cage-small.jpg" />
+    <source media="(max-width: 800px)" srcset="./images/faceoff_cage-medium.jpg" />
+    <img class="author__image" src="./images/faceoff_cage.jpg" alt="Аватар пользователя" />
+  </picture>
+  <div class="header" class="header">
+    HEADER
+  </div>
+  <a href="./secondary/index.html">to second page</a> -->
+
+  <!-- <div class="page"> -->
+  <header class="header header_white">
+    <div class="header__container">
+      <h2 class="header__title">NewsExplorer</h2>
+      <nav class="header__nav">
+        <a href="index.html" class="header__nav-link header__nav-link_active header__nav-link_white">Главная</a>
+        <a href="secondary/secondary.html"
+          class="header__nav-link header__nav-link_save header__nav-link_grey">Сохранённые статьи</a>
+        <button type="button" class="header__button header__button_white">Авторизоваться</button>
+      </nav>
+      <button class="header__hamburger"><svg class="header__toggle" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="16" height="2" fill="white" />
+          <rect x="4" y="14" width="16" height="2" fill="white" />
+        </svg></button>
+      <button class="header__hamburger header__hamburger-close"><svg width="24" height="24" viewBox="0 0 24 24"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.4142 12L18.7071 17.2928L17.2929 18.7071L11.2929 12.7071C10.9024 12.3165 10.9024 11.6834 11.2929 11.2928L17.2929 5.29285L18.7071 6.70706L13.4142 12Z"
+            fill="white" />
+          <path
+            d="M10.8787 12L5.58577 17.2928L6.99999 18.7071L13 12.7071C13.3905 12.3165 13.3905 11.6834 13 11.2928L6.99999 5.29285L5.58577 6.70706L10.8787 12Z"
+            fill="white" />
+        </svg></button>
+    </div>
+  </header>
+  <main>
+    <section class="search">
+      <div class="search__container">
+        <h1 class="search__title">Что в мире творится?</h1>
+        <p class="search__text">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+        <form class="search__form" novalidate>
+          <input type="text" placeholder="Введите тему новости" class="search__input" required>
+          <button type="button" class="search__button">Искать</button>
+        </form>
+      </div>
+    </section>
+    <section class="preloader">
+      <i class="preloader__circle"></i>
+      <span class="preloader__text">Идет поиск новостей...</span>
+    </section>
+    <section class="not-found">
+      <img src="./images/not-found.png" alt="лупа с грустным смайлом">
+      <h3 class="not-found__title">Ничего не найдено</h3>
+      <p class="not-found__text">К сожалению, по вашему запросу
+        ничего не найдено.</p>
+    </section>
+    <section class="articles">
+      <h3 class="articles__title">Результаты поиска</h3>
+      <div class="articles__list">
+        <div class="articles__card">
+          <a href="secondary/secondary.html" class="articles__link" target="_blank">
+            <div class="articles__card-image-container">
+              <img class="articles__card-image" alt="листья цветка"
+                src="./images/articles__card-image.png">
+            </div>
+            <div class="articles__card-info">
+              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
+              <h4 class="articles__card-info-title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
+              <p class="articles__card-info-text">Знаменитый фотограф снимает первозданные леса России, чтобы
+                рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где он
+                нашёл
+              </p>
+              <span class="articles__card-info-source">риа</span>
+            </div>
+          </a>
+          <span class="articles__card-image-hint">Войдите, чтобы сохранять статьи</span>
+          <button type="button" class="articles__card-image-button">
+            <!-- <img class="articles__card-image-save"
+                src="./images/button-grey.svg"> </button> -->
+            <svg class="articles__card-image-save articles__card-image-save__saved" width="14" height="19"
+              viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
+                stroke-width="2" />
+            </svg></button>
+        </div>
+
+        <div class="articles__card">
+          <a href="secondary/secondary.html" class="articles__link" target="_blank">
+            <div class="articles__card-image-container">
+              <img class="articles__card-image" alt="листья цветка"
+                src="./images/articles__card-image.png">
+            </div>
+            <div class="articles__card-info">
+              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
+              <h4 class="articles__card-info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="articles__card-info-text">Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть
+                ускользающую красоту одного
+                из местных чудес природы.</p>
+              <span class="articles__card-info-source">медуза</span>
+            </div>
+          </a>
+          <span class="articles__card-image-hint">Войдите, чтобы сохранять статьи</span>
+          <button type="button" class="articles__card-image-button">
+            <!-- <img class="articles__card-image-save"
+                src="./images/button-grey.svg"> </button> -->
+            <svg class="articles__card-image-save" width="14" height="19" viewBox="0 0 14 19" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
+                stroke-width="2" />
+            </svg></button>
+        </div>
+
+        <div class="articles__card">
+          <a href="secondary/secondary.html" class="articles__link" target="_blank">
+            <div class="articles__card-image-container">
+              <img class="articles__card-image" alt="листья цветка"
+                src="./images/articles__card-image.png">
+            </div>
+            <div class="articles__card-info">
+              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
+              <h4 class="articles__card-info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="articles__card-info-text">Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть
+                ускользающую красоту одного
+                из местных чудес природы.</p>
+              <span class="articles__card-info-source">медуза</span>
+            </div>
+          </a>
+          <span class="articles__card-image-hint">Войдите, чтобы сохранять статьи</span>
+          <button type="button" class="articles__card-image-button">
+            <!-- <img class="articles__card-image-save"
+                src="./images/button-grey.svg"> </button> -->
+            <svg class="articles__card-image-save" width="14" height="19" viewBox="0 0 14 19" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
+                stroke-width="2" />
+            </svg></button>
+        </div>
+
+      </div>
+      <div class="articles__button-container"><button type="button" class="articles__button">Показать ещё</button></div>
+    </section>
+    <section class="author">
+      <div class="author__container">
+        <img src="./images/author.png" alt="фото автора">
+        <div class="author__info">
+          <h2 class="author__title">Об авторе</h2>
+          <p class="author__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы
+            занимаетесь, какими
+            технологиями разработки владеете.
+          </p>
+          <p class="author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и
+            чем можете помочь
+            потенциальным заказчикам.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <span class="footer__copyright">© 2020 Supersite, Powered by News <abbr>API</abbr></span>
+      <div class="footer__nav-container">
+        <nav class="footer__nav">
+          <a href="index.html" class="footer__link">Главная</a>
+          <a href="https://praktikum.yandex.ru" target="_blank" class="footer__link">Яндекс.Практикум</a>
+        </nav>
+        <ul class="footer__list">
+          <li><a href="https://github.com/AlexKuturkin" target="_blank">
+              <img src="./images/github.png" alt="github">
+            </a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100007045992616" target="_blank">
+              <img src="./images/fb.png" alt="facebook">
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- </div> -->
+  <script src="main/main.b0df514e5dc2a3aa267b.js"></script>
+</body>
+
+</html>
