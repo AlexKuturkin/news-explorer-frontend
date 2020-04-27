@@ -1,0 +1,13 @@
+@import url(./_big/popup__advice-link_big.css);
+
+.popup__advice-link {
+    color: #2f71e5;
+    font-family: Inter,Arial,sans-serif;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    line-height: 17px;
+}

@@ -1,0 +1,23 @@
+@import url(./__button-close/popup__button-close.css);
+@import url(./__content/popup__content.css);
+@import url(./__title/popup__title.css);
+@import url(./__label/popup__label.css);
+@import url(./__error/popup__error.css);
+@import url(./__input/popup__input.css);
+@import url(./__error-item/popup__error-item.css);
+@import url(./__button-reg/popup__button-reg.css);
+@import url(./__advice/popup__advice.css);
+@import url(./__advice-link/popup__advice-link.css);
+
+.popup {
+    position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	align-items: center;
+	justify-content: center;
+	display: none;
+	z-index: 1;
+}

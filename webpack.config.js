@@ -2,11 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
-
-// const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
@@ -16,15 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]/[name].[chunkhash].js',
-    // filename: (chunkData) => {
-    //   return chunkData.chunk.name === 'main' ? '[name].js': '[name]/[name].js';
-    // },
   },
-  /*   resolve: {
-      alias: {
-        images: path.resolve(__dirname, 'src/images/'),
-      },
-    }, */
   module: {
     rules: [
       {
@@ -37,8 +26,6 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          /* isDev ? { loader: 'style-loader' } : */
-
           {
             loader: MiniCssExtractPlugin.loader,
             options: { publicPath: '../' },
@@ -90,20 +77,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      // hash: true,
       template: './src/index.html',
       filename: './index.html',
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      // hash: true,
       template: './src/secondary/secondary.html',
       filename: './secondary/secondary.html',
     }),
     new WebpackMd5Hash(),
-    /*     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-    }), */
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: cssnano,

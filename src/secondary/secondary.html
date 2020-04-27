@@ -13,19 +13,17 @@
 </head>
 
 <body>
-  <!--   Hello, I am secondary page!
-  <img src=".<%= require('../images/fz.jpg')%>" alt="fz" />
-  <footer> copyright, 2020</footer> 
-  <a href="../index.html">to main page</a>
-   -->
   <header class="header header_black">
     <div class="header__container">
       <h2 class="header__title">NewsExplorer</h2>
       <nav class="header__nav">
-        <a href="../index.html" class="header__nav-link header__nav-link_black">Главная</a>
-        <a href="secondary.html"
-          class="header__nav-link header__nav-link_save header__nav-link_black header__nav-link_active header__nav-link_active-secondary">Сохранённые
-          статьи</a>
+        <ul class="header__nav-list">
+          <li class="header__nav-list-item"><a href="../index.html"
+              class="header__nav-link header__nav-link_black">Главная</a></li>
+          <li class="header__nav-list-item"><a href="secondary.html"
+              class="header__nav-link header__nav-link_save header__nav-link_black header__nav-link_active header__nav-link_active-secondary">Сохранённые
+              статьи</a></li>
+        </ul>
         <button type="button" class="header__button header__button_black">Грета <img class="header__button-logout"
             src=".<%= require('../images/logout.png')%>" alt="выход" /> </button>
       </nav>
@@ -33,6 +31,15 @@
           fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="16" height="2" fill="black" />
           <rect x="4" y="14" width="16" height="2" fill="black" />
+        </svg></button>
+      <button class="header__hamburger header__hamburger-close"><svg width="24" height="24" viewBox="0 0 24 24"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.4142 12L18.7071 17.2928L17.2929 18.7071L11.2929 12.7071C10.9024 12.3165 10.9024 11.6834 11.2929 11.2928L17.2929 5.29285L18.7071 6.70706L13.4142 12Z"
+            fill="black" />
+          <path
+            d="M10.8787 12L5.58577 17.2928L6.99999 18.7071L13 12.7071C13.3905 12.3165 13.3905 11.6834 13 11.2928L6.99999 5.29285L5.58577 6.70706L10.8787 12Z"
+            fill="black" />
         </svg></button>
     </div>
   </header>
@@ -134,23 +141,24 @@
       <span class="footer__copyright">© 2020 Supersite, Powered by News <abbr>API</abbr></span>
       <div class="footer__nav-container">
         <nav class="footer__nav">
-          <a href="index.html" class="footer__link">Главная</a>
-          <a href="https://praktikum.yandex.ru" target="_blank" class="footer__link">Яндекс.Практикум</a>
+          <ul class="footer__nav-list">
+            <li><a href="index.html" class="footer__link">Главная</a></li>
+            <li><a href="https://praktikum.yandex.ru" target="_blank" class="footer__link">Яндекс.Практикум</a></li>
+          </ul>
         </nav>
         <ul class="footer__list">
-          <a href="https://github.com/AlexKuturkin" target="_blank">
-            <li><img src=".<%= require('../images/github.png') %>" alt="github"></li>
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=100007045992616" target="_blank">
-            <li><img src=".<%= require('../images/fb.png') %>" alt="facebook"></li>
-          </a>
+          <li><a href="https://github.com/AlexKuturkin" target="_blank">
+              <img src=".<%= require('../images/github.png') %>" alt="github">
+            </a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100007045992616" target="_blank">
+              <img src=".<%= require('../images/fb.png') %>" alt="facebook">
+            </a></li>
         </ul>
       </div>
     </div>
   </footer>
-
-
+  <script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
 </body>
-<script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
+
 
 </html>

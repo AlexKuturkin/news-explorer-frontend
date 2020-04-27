@@ -1,3 +1,9 @@
 .header__nav_gamburger-grey {
     background: #B6BCBF;
 }
+
+@media screen and (max-width: 767px) {
+    .header__nav_gamburger-grey  {   
+        padding: 55px 40px 30px;
+    }
+}

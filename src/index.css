@@ -6,10 +6,7 @@
 @import url(./blocks/articles/articles.css);
 @import url(./blocks/author/author.css);
 @import url(./blocks/footer/footer.css);
-
-/* body, html {
-	 font-family: 'Roboto', Helvetica, Arial, sans-serif; 
-} */
+@import url(./blocks/popup/popup.css);
 
 body {
 	margin: 0

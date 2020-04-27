@@ -1,0 +1,5 @@
+@import url(./_open/header__hamburger-close_open.css);
+
+.header__hamburger-close {
+    display: none;
+}

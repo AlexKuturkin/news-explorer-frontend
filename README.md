@@ -1,3 +1,4 @@
 # news-explorer-frontend
 
-check
+## Github Pages
+https://alexkuturkin.github.io/news-explorer-frontend/index.html

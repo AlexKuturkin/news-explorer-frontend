@@ -16,3 +16,11 @@
 .search__button:focus {
     outline: 1px solid #347EFF;
 }
+
+.search__button:hover {
+    background-color: #347EFF;;
+}
+
+.search__button:active {
+    background-color: #2A65CC;
+}

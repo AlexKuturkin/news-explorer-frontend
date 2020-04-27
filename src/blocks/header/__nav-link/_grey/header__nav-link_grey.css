@@ -1,3 +1,11 @@
 .header__nav-link_grey {
     color: #B6BCBF;
 }
+
+@media screen and (max-width: 767px) {
+    .header__nav-link_grey  {   
+        color: #FFFFFF;
+        padding-bottom: 18px;
+        padding-top: 10px;
+    }
+}

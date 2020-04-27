@@ -11,6 +11,7 @@
     padding-right: 210px;
     box-sizing: border-box;
     outline: none;
+    caret-color: #2F71E5;
 }
 
 .search__input:focus {

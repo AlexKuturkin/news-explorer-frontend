@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
     .header__title   {   
         position: relative;
         z-index: 2;

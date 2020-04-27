@@ -1,0 +1,9 @@
+.popup__error-item {
+    color: #FF0000;
+    margin: 3px 0 13px;
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;  
+    font-family: Inter,Arial,sans-serif;
+    display: block;
+}

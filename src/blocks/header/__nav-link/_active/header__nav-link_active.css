@@ -1,6 +1,5 @@
 .header__nav-link_active {
-    /* border-bottom: 3px solid #FFFFFF; */
-    padding-bottom: 23px;
+    padding-bottom: 24px;
 }
 
 @media screen and (max-width: 900px) {
