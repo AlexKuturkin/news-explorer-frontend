@@ -1,0 +1,4 @@
+.header__hamburger_close.header__hamburger_open {
+    display: block;
+    z-index: 1;
+}

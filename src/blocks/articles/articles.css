@@ -1,17 +1,5 @@
 @import url(./__title/articles__title.css);
-@import url(./__link/articles__link.css);
-@import url(./__card/articles__card.css);
-@import url(./__card-image/articles__card-image.css);
-@import url(./__card-info/articles__card-info.css);
 @import url(./__list/articles__list.css);
-@import url(./__card-image-container/articles__card-image-container.css);
-@import url(./__card-info-time/articles__card-info-time.css);
-@import url(./__card-info-title/articles__card-info-title.css);
-@import url(./__card-info-text/articles__card-info-text.css);
-@import url(./__card-image-save/articles__card-image-save.css);
-@import url(./__card-image-button/articles__card-image-button.css);
-@import url(./__card-info-source/articles__card-info-source.css);
-@import url(./__card-image-hint/articles__card-image-hint.css);
 @import url(./__button-container/articles__button-container.css);
 @import url(./__button/articles__button.css);
 

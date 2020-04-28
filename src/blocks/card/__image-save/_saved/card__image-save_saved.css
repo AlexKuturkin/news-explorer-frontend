@@ -1,0 +1,8 @@
+.card__image-save.card__image-save_saved {
+    stroke: #2F71E5;
+    fill: #2F71E5;
+}
+
+.card__image-save.card__image-save_saved:hover {
+    stroke: #2F71E5;
+}

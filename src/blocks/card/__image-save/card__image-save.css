@@ -1,0 +1,10 @@
+@import url(./_saved/card__image-save_saved.css);
+
+.card__image-save {
+    stroke: #B6BCBF;
+    padding: 10px 12px;
+}
+
+.card__image-save:hover {
+    stroke: black;
+}

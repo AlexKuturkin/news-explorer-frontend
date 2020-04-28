@@ -1,0 +1,18 @@
+@import url(./__image-button/card__image-button.css);
+@import url(./__image-container/card__image-container.css);
+@import url(./__image-hint/card__image-hint.css);
+/* @import url(./__image-save/card__image-save.css); */
+@import url(./__image/card__image.css);
+@import url(./__info-source/card__info-source.css);
+@import url(./__info-text/card__info-text.css);
+@import url(./__info-time/card__info-time.css);
+@import url(./__info-title/card__info-title.css);
+@import url(./__info/card__info.css);
+@import url(./__link/card__link.css);
+@import url(./__image-delete/card__image-delete.css);
+@import url(./__image-keyword/card__image-keyword.css);
+
+.card {
+    max-width: 400px;
+    position: relative;
+}
