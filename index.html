@@ -8,7 +8,7 @@
   <meta name="desciption" content="News Explorer — поиск новостей">
   <meta name="author" content="Алексей Кутуркин">
   <title>News Explorer</title>
-  <link rel="stylesheet" href="main/main.f4da797ddbad448fe4b7.css" />
+  <link rel="stylesheet" href="main/main.7c0b56545cb4bfbeaf66.css" />
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -26,13 +26,13 @@
         </ul>
         <button type="button" class="header__button header__button_white">Авторизоваться</button>
       </nav>
-      <button class="header__hamburger"><svg class="header__toggle" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button type="button" class="header__hamburger"><svg class="header__toggle" width="24" height="24"
+          viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="16" height="2" fill="white" />
           <rect x="4" y="14" width="16" height="2" fill="white" />
         </svg></button>
-      <button class="header__hamburger header__hamburger-close"><svg width="24" height="24" viewBox="0 0 24 24"
-          fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button type="button" class="header__hamburger header__hamburger_close"><svg width="24" height="24"
+          viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M13.4142 12L18.7071 17.2928L17.2929 18.7071L11.2929 12.7071C10.9024 12.3165 10.9024 11.6834 11.2929 11.2928L17.2929 5.29285L18.7071 6.70706L13.4142 12Z"
             fill="white" />
@@ -44,23 +44,22 @@
   </header>
   <main>
     <section class="popup reg">
-      <div class="popup__content">
-        <button class="popup__button-close"><img src="./images/close-popup.svg" alt="закрыть попап"
-            class="popup__close"></button>
+      <form class="popup__content">
+        <button type="button" class="popup__button-close"></button>
         <h3 class="popup__title">Регистрация</h3>
         <label for="reg-email" class="popup__label">Email</label>
-        <input type="email" name="email" id="reg-email" class="popup__input" placeholder="Введите почту" required="">
-        <span class="popup__error-item">Ошибка</span>
+        <input type="email" name="email" id="reg-email" class="popup__input" placeholder="Введите почту" required>
+        <p class="popup__error-item">Ошибка</p>
 
         <label for="reg-password" class="popup__label">Пароль</label>
         <input type="password" name="password" id="reg-password" class="popup__input" placeholder="Введите пароль"
-          minlength="10" required="">
-        <span class="popup__error-item">Ошибка</span>
+          minlength="10" required>
+        <p class="popup__error-item">Ошибка</p>
 
         <label for="reg-name" class="popup__label">Имя</label>
         <input type="text" name="name" id="reg-name" class="popup__input" placeholder="Введите свое имя" minlength="2"
-          maxlength="30" required="">
-        <span class="popup__error-item">Ошибка</span>
+          maxlength="30" required>
+        <p class="popup__error-item">Ошибка</p>
         <p class="popup__error">Такой пользователь уже есть</p>
         <button type="submit" class="popup__button-reg">
           Зарегистрироваться
@@ -68,22 +67,21 @@
         <p class="popup__advice">
           или <button type="button" class="popup__advice-link">Войти</button>
         </p>
-      </div>
+      </form>
     </section>
 
     <section class="popup enter">
-      <div class="popup__content">
-        <button class="popup__button-close"><img src="./images/close-popup.svg" alt="закрыть попап"
-            class="popup__close"></button>
+      <form class="popup__content">
+        <button type="button" class="popup__button-close"></button>
         <h3 class="popup__title">Вход</h3>
         <label for="enter-email" class="popup__label">Email</label>
-        <input type="email" name="email" id="enter-email" class="popup__input" placeholder="Введите почту" required="">
-        <span class="popup__error-item">Ошибка</span>
+        <input type="email" name="email" id="enter-email" class="popup__input" placeholder="Введите почту" required>
+        <p class="popup__error-item">Ошибка</p>
 
         <label for="enter-password" class="popup__label">Пароль</label>
         <input type="password" name="password" id="enter-password" class="popup__input" placeholder="Введите пароль"
-          minlength="10" required="">
-        <span class="popup__error-item">Ошибка</span>
+          minlength="10" required>
+        <p class="popup__error-item">Ошибка</p>
 
         <button type="submit" class="popup__button-reg">
           Войти
@@ -91,13 +89,12 @@
         <p class="popup__advice">
           или <button type="button" class="popup__advice-link popup__advice-link_big">Зарегистрироваться</button>
         </p>
-      </div>
+      </form>
     </section>
 
     <section class="popup success">
       <div class="popup__content">
-        <button class="popup__button-close"><img src="./images/close-popup.svg" alt="закрыть попап"
-            class="popup__close"></button>
+        <button type="button" class="popup__button-close"></button>
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
         <button type="button" class="popup__advice-link">Выполнить вход</button>
       </div>
@@ -108,8 +105,8 @@
         <h1 class="search__title">Что в мире творится?</h1>
         <p class="search__text">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
         <form class="search__form" novalidate>
-          <input type="text" placeholder="Введите тему новости" class="search__input" required>
-          <button type="button" class="search__button">Искать</button>
+          <input type="search" placeholder="Введите тему новости" class="search__input" required>
+          <button type="submit" class="search__button">Искать</button>
         </form>
       </div>
     </section>
@@ -118,7 +115,7 @@
       <h5 class="preloader__text">Идет поиск новостей...</h5>
     </section>
     <section class="not-found">
-      <img src="./images/not-found.png" alt="лупа с грустным смайлом">
+      <img src="./images/not-found.svg" alt="лупа с грустным смайлом">
       <h3 class="not-found__title">Ничего не найдено</h3>
       <p class="not-found__text">К сожалению, по вашему запросу
         ничего не найдено.</p>
@@ -126,75 +123,72 @@
     <section class="articles">
       <h3 class="articles__title">Результаты поиска</h3>
       <div class="articles__list">
-        <div class="articles__card">
-          <a href="secondary/secondary.html" class="articles__link" target="_blank">
-            <div class="articles__card-image-container">
-              <img class="articles__card-image" alt="листья цветка"
-                src="./images/articles__card-image.png">
+        <div class="card">
+          <a href="secondary/secondary.html" class="card__link" target="_blank">
+            <div class="card__image-container">
+              <img class="card__image" alt="листья цветка" src="./images/card__image.jpg">
             </div>
-            <div class="articles__card-info">
-              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
-              <h4 class="articles__card-info-title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
-              <p class="articles__card-info-text">Знаменитый фотограф снимает первозданные леса России, чтобы
+            <div class="card__info">
+              <time datetime="2019-08-02" class="card__info-time">2 августа, 2019</time>
+              <h4 class="card__info-title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
+              <p class="card__info-text">Знаменитый фотограф снимает первозданные леса России, чтобы
                 рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где он
                 нашёл
               </p>
-              <span class="articles__card-info-source">риа</span>
+              <p class="card__info-source">риа</p>
             </div>
           </a>
-          <span class="articles__card-image-hint">Войдите, чтобы сохранять статьи</span>
-          <button type="button" class="articles__card-image-button">
-            <svg class="articles__card-image-save articles__card-image-save__saved" width="14" height="19"
-              viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
-                stroke-width="2" />
-            </svg></button>
-        </div>
-
-        <div class="articles__card">
-          <a href="secondary/secondary.html" class="articles__link" target="_blank">
-            <div class="articles__card-image-container">
-              <img class="articles__card-image" alt="листья цветка"
-                src="./images/articles__card-image.png">
-            </div>
-            <div class="articles__card-info">
-              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
-              <h4 class="articles__card-info-title">Лесные огоньки: история одной фотографии</h4>
-              <p class="articles__card-info-text">Фотограф отвлеклась от освещения суровой политической реальности
-                Мексики, чтобы запечатлеть
-                ускользающую красоту одного
-                из местных чудес природы.</p>
-              <span class="articles__card-info-source">медуза</span>
-            </div>
-          </a>
-          <span class="articles__card-image-hint">Войдите, чтобы сохранять статьи</span>
-          <button type="button" class="articles__card-image-button">
-            <svg class="articles__card-image-save" width="14" height="19" viewBox="0 0 14 19" fill="none"
+          <span class="card__image-hint">Войдите, чтобы сохранять статьи</span>
+          <button type="button" class="card__image-button">
+            <svg class="card__image-save card__image-save_saved" width="14" height="19" viewBox="0 0 14 19" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
                 stroke-width="2" />
             </svg></button>
         </div>
 
-        <div class="articles__card">
-          <a href="secondary/secondary.html" class="articles__link" target="_blank">
-            <div class="articles__card-image-container">
-              <img class="articles__card-image" alt="листья цветка"
-                src="./images/articles__card-image.png">
+        <div class="card">
+          <a href="secondary/secondary.html" class="card__link" target="_blank">
+            <div class="card__image-container">
+              <img class="card__image" alt="листья цветка" src="./images/card__image.jpg">
             </div>
-            <div class="articles__card-info">
-              <time datetime="2019-08-02" class="articles__card-info-time">2 августа, 2019</time>
-              <h4 class="articles__card-info-title">Лесные огоньки: история одной фотографии</h4>
-              <p class="articles__card-info-text">Фотограф отвлеклась от освещения суровой политической реальности
+            <div class="card__info">
+              <time datetime="2019-08-02" class="card__info-time">2 августа, 2019</time>
+              <h4 class="card__info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="card__info-text">Фотограф отвлеклась от освещения суровой политической реальности
                 Мексики, чтобы запечатлеть
                 ускользающую красоту одного
                 из местных чудес природы.</p>
-              <span class="articles__card-info-source">медуза</span>
+              <p class="card__info-source">медуза</p>
             </div>
           </a>
-          <span class="articles__card-image-hint">Войдите, чтобы сохранять статьи</span>
-          <button type="button" class="articles__card-image-button">
-            <svg class="articles__card-image-save" width="14" height="19" viewBox="0 0 14 19" fill="none"
+          <span class="card__image-hint">Войдите, чтобы сохранять статьи</span>
+          <button type="button" class="card__image-button">
+            <svg class="card__image-save" width="14" height="19" viewBox="0 0 14 19" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
+                stroke-width="2" />
+            </svg></button>
+        </div>
+
+        <div class="card">
+          <a href="secondary/secondary.html" class="card__link" target="_blank">
+            <div class="card__image-container">
+              <img class="card__image" alt="листья цветка" src="./images/card__image.jpg">
+            </div>
+            <div class="card__info">
+              <time datetime="2019-08-02" class="card__info-time">2 августа, 2019</time>
+              <h4 class="card__info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="card__info-text">Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть
+                ускользающую красоту одного
+                из местных чудес природы.</p>
+              <p class="card__info-source">медуза</p>
+            </div>
+          </a>
+          <span class="card__image-hint">Войдите, чтобы сохранять статьи</span>
+          <button type="button" class="card__image-button">
+            <svg class="card__image-save" width="14" height="19" viewBox="0 0 14 19" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
                 stroke-width="2" />
@@ -225,7 +219,7 @@
   </main>
   <footer class="footer">
     <div class="footer__container">
-      <span class="footer__copyright">© 2020 Supersite, Powered by News <abbr>API</abbr></span>
+      <p class="footer__copyright">© 2020 Supersite, Powered by News <abbr>API</abbr></p>
       <div class="footer__nav-container">
         <nav class="footer__nav">
           <ul class="footer__nav-list">
@@ -244,7 +238,7 @@
       </div>
     </div>
   </footer>
-  <script src="main/main.b0df514e5dc2a3aa267b.js"></script>
+  <script src="main/main.9fcc8cda160d0f755467.js"></script>
 </body>
 
 </html>
