@@ -7,3 +7,9 @@
         padding-bottom: 40px;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .articles__button-container   {   
+        padding-bottom: 32px;
+    }
+}

@@ -10,3 +10,12 @@
     padding: 0;
     background-image: url(../../../images/close-popup.svg);
 }
+
+@media screen and (max-width: 550px) {
+    .popup__button-close {   
+        right: 15px;
+        width: 16px;
+        height: 16px;
+        background-position: 50%;
+    }
+}

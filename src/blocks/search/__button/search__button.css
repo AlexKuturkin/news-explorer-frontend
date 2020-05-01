@@ -26,3 +26,10 @@
 .search__button:active {
     background-color: #2A65CC;
 }
+
+@media screen and (max-width: 550px) {
+    .search__button {   
+        top: 80px;
+        width: 100%;
+    }
+}

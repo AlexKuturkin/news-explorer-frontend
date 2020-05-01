@@ -21,3 +21,9 @@
         margin-top: -67px;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .search  {   
+        height: 536px;
+    }
+}

@@ -2,7 +2,7 @@
     display: flex;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 730px) {
     .footer__nav-container  {   
         order: 1;
         justify-content: space-between;

@@ -8,6 +8,7 @@
 @import url(./__button-reg/popup__button-reg.css);
 @import url(./__advice/popup__advice.css);
 @import url(./__advice-link/popup__advice-link.css);
+@import url(./_open/popup_open.css);
 
 .popup {
     position: fixed;
@@ -21,4 +22,11 @@
 	justify-content: center;
 	display: none;
 	z-index: 1;
+}
+
+@media screen and (max-width: 550px) {
+    .popup {   
+		align-items: baseline;
+		top: 57px;
+    }
 }

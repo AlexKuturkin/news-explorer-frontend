@@ -26,7 +26,7 @@
         </ul>
         <button type="button" class="header__button header__button_white">Авторизоваться</button>
       </nav>
-      <button type="button" class="header__hamburger"><svg class="header__toggle" width="24" height="24"
+      <button type="button" class="header__hamburger close"><svg class="header__toggle" width="24" height="24"
           viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="16" height="2" fill="white" />
           <rect x="4" y="14" width="16" height="2" fill="white" />
@@ -65,14 +65,14 @@
           Зарегистрироваться
         </button>
         <p class="popup__advice">
-          или <button type="button" class="popup__advice-link">Войти</button>
+          или <button type="button" class="popup__advice-link enter-button">Войти</button>
         </p>
       </form>
     </section>
 
     <section class="popup enter">
       <form class="popup__content">
-        <button type="button" class="popup__button-close"></button>
+        <button type="button" class="popup__button-close enter-close"></button>
         <h3 class="popup__title">Вход</h3>
         <label for="enter-email" class="popup__label">Email</label>
         <input type="email" name="email" id="enter-email" class="popup__input" placeholder="Введите почту" required>
@@ -83,7 +83,7 @@
           minlength="10" required>
         <p class="popup__error-item">Ошибка</p>
 
-        <button type="submit" class="popup__button-reg">
+        <button type="submit" class="popup__button-reg popup__button-reg-enter">
           Войти
         </button>
         <p class="popup__advice">
@@ -94,7 +94,7 @@
 
     <section class="popup success">
       <div class="popup__content">
-        <button type="button" class="popup__button-close"></button>
+        <button type="button" class="popup__button-close success-close"></button>
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
         <button type="button" class="popup__advice-link">Выполнить вход</button>
       </div>
