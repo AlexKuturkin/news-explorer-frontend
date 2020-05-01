@@ -8,7 +8,7 @@
   <meta name="desciption" content="News Explorer — поиск новостей">
   <meta name="author" content="Алексей Кутуркин">
   <title>News Explorer</title>
-  <link rel="stylesheet" href="main/main.0b3bf7eccfed507d0f6f.css" />
+  <link rel="stylesheet" href="main/main.ca10e3b43a62c4c9666e.css" />
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -26,7 +26,7 @@
         </ul>
         <button type="button" class="header__button header__button_white">Авторизоваться</button>
       </nav>
-      <button type="button" class="header__hamburger"><svg class="header__toggle" width="24" height="24"
+      <button type="button" class="header__hamburger close"><svg class="header__toggle" width="24" height="24"
           viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="16" height="2" fill="white" />
           <rect x="4" y="14" width="16" height="2" fill="white" />
@@ -65,14 +65,14 @@
           Зарегистрироваться
         </button>
         <p class="popup__advice">
-          или <button type="button" class="popup__advice-link">Войти</button>
+          или <button type="button" class="popup__advice-link enter-button">Войти</button>
         </p>
       </form>
     </section>
 
     <section class="popup enter">
       <form class="popup__content">
-        <button type="button" class="popup__button-close"></button>
+        <button type="button" class="popup__button-close enter-close"></button>
         <h3 class="popup__title">Вход</h3>
         <label for="enter-email" class="popup__label">Email</label>
         <input type="email" name="email" id="enter-email" class="popup__input" placeholder="Введите почту" required>
@@ -83,7 +83,7 @@
           minlength="10" required>
         <p class="popup__error-item">Ошибка</p>
 
-        <button type="submit" class="popup__button-reg">
+        <button type="submit" class="popup__button-reg popup__button-reg-enter">
           Войти
         </button>
         <p class="popup__advice">
@@ -94,7 +94,7 @@
 
     <section class="popup success">
       <div class="popup__content">
-        <button type="button" class="popup__button-close"></button>
+        <button type="button" class="popup__button-close success-close"></button>
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
         <button type="button" class="popup__advice-link">Выполнить вход</button>
       </div>
@@ -200,9 +200,10 @@
     </section>
     <section class="author">
       <div class="author__container">
-        <picture>
-          <source media="(max-width: 769px)" srcset="./images/author-tablet.png" />
-          <img src="./images/author.png" alt="фото автора">
+        <picture class="author__picture">
+          <source media="(max-width: 550px)" srcset="./images/author-mob.jpg" />
+          <source media="(max-width: 1100px)" srcset="./images/author-tablet.jpg" />
+          <img src="./images/author.jpg" alt="фото автора">
         </picture>
         <div class="author__info">
           <h2 class="author__title">Об авторе</h2>
@@ -223,22 +224,22 @@
       <div class="footer__nav-container">
         <nav class="footer__nav">
           <ul class="footer__nav-list">
-            <li><a href="index.html" class="footer__link">Главная</a></li>
+            <li class="footer__nav-list-item"><a href="index.html" class="footer__link">Главная</a></li>
             <li><a href="https://praktikum.yandex.ru" target="_blank" class="footer__link">Яндекс.Практикум</a></li>
           </ul>
         </nav>
         <ul class="footer__list">
           <li><a href="https://github.com/AlexKuturkin" target="_blank">
-              <img src="./images/github.png" alt="github">
+              <img src="./images/github.jpg" alt="github">
             </a></li>
           <li><a href="https://www.facebook.com/profile.php?id=100007045992616" target="_blank">
-              <img src="./images/fb.png" alt="facebook">
+              <img src="./images/fb.jpg" alt="facebook">
             </a></li>
         </ul>
       </div>
     </div>
   </footer>
-  <script src="main/main.9fcc8cda160d0f755467.js"></script>
+  <script src="main/main.d503303a4d0f20825c82.js"></script>
 </body>
 
 </html>

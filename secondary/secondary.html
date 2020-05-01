@@ -8,7 +8,7 @@
   <meta name="desciption" content="News Explorer — поиск новостей. Сохранённые статьи">
   <meta name="author" content="Алексей Кутуркин">
   <title>News Explorer | Saved articles</title>
-  <link rel="stylesheet" href="../secondary/secondary.9b5cccca7d8627a4b60b.css" />
+  <link rel="stylesheet" href="../secondary/secondary.269a8b997484b6479aec.css" />
   <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -25,7 +25,7 @@
               статьи</a></li>
         </ul>
         <button type="button" class="header__button header__button_black">Грета <img class="header__button-logout"
-            src="../images/logout.png" alt="выход" /> </button>
+            src="../images/logout.svg" alt="выход" /> </button>
       </nav>
       <button type="button" class="header__hamburger"><svg class="header__toggle" width="24" height="24"
           viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@
             </div>
           </a>
           <span class="card__image-keyword">Тайга</span>
-          <span class="card__image-hint">Убрать из сохранённых</span>
+          <span class="card__image-hint card__image-hint_hide">Убрать из сохранённых</span>
           <button type="button" class="card__image-button">
             <svg class="card__image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@
             </div>
           </a>
           <span class="card__image-keyword">Природа</span>
-          <span class="card__image-hint">Убрать из сохранённых</span>
+          <span class="card__image-hint card__image-hint_hide">Убрать из сохранённых</span>
           <button type="button" class="card__image-button">
             <svg class="card__image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -121,7 +121,57 @@
             </div>
           </a>
           <span class="card__image-keyword">Природа</span>
-          <span class="card__image-hint">Убрать из сохранённых</span>
+          <span class="card__image-hint card__image-hint_hide">Убрать из сохранённых</span>
+          <button type="button" class="card__image-button">
+            <svg class="card__image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" />
+            </svg></button>
+        </div>
+
+        <div class="card">
+          <a href="../index.html" class="card__link" target="_blank">
+            <div class="card__image-container">
+              <img class="card__image" alt="листья цветка" src="../images/card__image.jpg">
+            </div>
+            <div class="card__info">
+              <time datetime="2019-08-02" class="card__info-time">2 августа, 2019</time>
+              <h4 class="card__info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="card__info-text">Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть
+                ускользающую красоту одного
+                из местных чудес природы.</p>
+              <p class="card__info-source">медуза</p>
+            </div>
+          </a>
+          <span class="card__image-keyword">Природа</span>
+          <span class="card__image-hint card__image-hint_hide">Убрать из сохранённых</span>
+          <button type="button" class="card__image-button">
+            <svg class="card__image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" />
+            </svg></button>
+        </div>
+
+        <div class="card">
+          <a href="../index.html" class="card__link" target="_blank">
+            <div class="card__image-container">
+              <img class="card__image" alt="листья цветка" src="../images/card__image.jpg">
+            </div>
+            <div class="card__info">
+              <time datetime="2019-08-02" class="card__info-time">2 августа, 2019</time>
+              <h4 class="card__info-title">Лесные огоньки: история одной фотографии</h4>
+              <p class="card__info-text">Фотограф отвлеклась от освещения суровой политической реальности
+                Мексики, чтобы запечатлеть
+                ускользающую красоту одного
+                из местных чудес природы.</p>
+              <p class="card__info-source">медуза</p>
+            </div>
+          </a>
+          <span class="card__image-keyword">Природа</span>
+          <span class="card__image-hint card__image-hint_hide">Убрать из сохранённых</span>
           <button type="button" class="card__image-button">
             <svg class="card__image-delete" width="24" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -139,16 +189,16 @@
       <div class="footer__nav-container">
         <nav class="footer__nav">
           <ul class="footer__nav-list">
-            <li><a href="index.html" class="footer__link">Главная</a></li>
+            <li class="footer__nav-list-item"><a href="index.html" class="footer__link">Главная</a></li>
             <li><a href="https://praktikum.yandex.ru" target="_blank" class="footer__link">Яндекс.Практикум</a></li>
           </ul>
         </nav>
         <ul class="footer__list">
           <li><a href="https://github.com/AlexKuturkin" target="_blank">
-              <img src="../images/github.png" alt="github">
+              <img src="../images/github.jpg" alt="github">
             </a></li>
           <li><a href="https://www.facebook.com/profile.php?id=100007045992616" target="_blank">
-              <img src="../images/fb.png" alt="facebook">
+              <img src="../images/fb.jpg" alt="facebook">
             </a></li>
         </ul>
       </div>
