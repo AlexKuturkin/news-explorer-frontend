@@ -60,6 +60,8 @@ enterClosePopup.addEventListener("click", function () {
 const popupSuccess = document.querySelector(".success");
 const openPopupSuccess = document.querySelector(".popup__button-reg-enter");
 openPopupSuccess.addEventListener("click", function () {
+    popupEnter.classList.remove("popup_open");
+    popupReg.classList.remove("popup_open");
     popupSuccess.classList.add("popup_open");
 });
 

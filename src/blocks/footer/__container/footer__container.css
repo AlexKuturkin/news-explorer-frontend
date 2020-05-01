@@ -16,6 +16,11 @@
     .footer__container {   
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .footer__container {   
         width: calc(100% - 32px);
     }
 }
