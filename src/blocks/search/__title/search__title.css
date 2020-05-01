@@ -8,3 +8,13 @@
     color: #FFFFFF;
     font-weight: 100;
 }
+
+@media screen and (max-width: 769px) {
+    .search__title  {   
+        font-size: 36px;
+        line-height: 40px;
+        width: 60%;
+        padding-top: 104px;
+        padding-bottom: 16px;
+    }
+}

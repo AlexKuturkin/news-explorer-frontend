@@ -5,3 +5,21 @@
     height: 284px;
     position: relative;
 }
+
+@media screen and (max-width: 900px) {
+    .card__info  {   
+        padding: 16px 16px 0;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .card__info  {   
+        height: 254px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card__info  {   
+        height: 229px;
+    }
+}

@@ -9,3 +9,18 @@
     width: calc(100% - 208px);
     padding-top: 80px;
 }
+
+@media screen and (max-width: 1130px) {
+    .articles__title   {   
+        width: calc(100% - 80px);
+        padding-top: 32px;
+        font-size: 30px;
+        line-height: 34px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .articles__title   {   
+        width: calc(100% - 32px);
+    }
+}

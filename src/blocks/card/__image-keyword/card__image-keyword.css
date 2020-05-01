@@ -12,3 +12,10 @@
     top: 24px;
     left: 24px;
 }
+
+@media screen and (max-width: 1310px) {
+    .card__image-keyword  {   
+        top: 8px;
+        left: 8px;
+    }
+}

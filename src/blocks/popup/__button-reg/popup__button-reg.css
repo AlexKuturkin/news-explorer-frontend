@@ -1,3 +1,5 @@
+@import url(./_inactive/popup__button-reg_inactive.css);
+
 .popup__button-reg {
     font-family: Roboto,Arial,sans-serif;
     width: 100%;

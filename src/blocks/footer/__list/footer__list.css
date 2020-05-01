@@ -6,3 +6,9 @@
     width: 70px;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 1130px) {
+    .footer__list  {   
+        margin: 0 0 0 25px;
+    }
+}

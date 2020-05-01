@@ -14,3 +14,10 @@
 .card__image-button:focus {
     outline: 1px solid #347EFF;
 }
+
+@media screen and (max-width: 1310px) {
+    .card__image-button  {   
+        top: 8px;
+        right: 8px;
+    }
+}

@@ -14,3 +14,10 @@
     height: 576px;
     position: relative;
 }
+
+@media screen and (max-width: 769px) {
+    .search  {   
+        height: 400px;
+        margin-top: -67px;
+    }
+}

@@ -2,6 +2,7 @@
 @import url(./__info/author__info.css);
 @import url(./__title/author__title.css);
 @import url(./__text/author__text.css);
+@import url(./__picture/author__picture.css);
 
 .author {
     width: 100%;

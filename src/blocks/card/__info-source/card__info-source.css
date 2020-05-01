@@ -10,3 +10,9 @@
     bottom: 24px;
     margin: 0;
 }
+
+@media screen and (max-width: 900px) {
+    .card__info-source {   
+        bottom: 16px;
+    }
+}

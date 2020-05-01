@@ -7,9 +7,16 @@
     height: 44px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1130px) {
     .header__container   {   
         width: calc(100% - 80px);
         margin: 12px auto 10px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header__container   {   
+        width: calc(100% - 32px);
+        height: 34px;
     }
 }

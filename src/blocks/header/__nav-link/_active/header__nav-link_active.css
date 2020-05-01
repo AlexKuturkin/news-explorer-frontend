@@ -1,9 +1,9 @@
 .header__nav-link_active {
-    padding-bottom: 24px;
+    padding-bottom: 25px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1130px) {
     .header__nav-link_active   {   
-        padding-bottom: 18px;
+        padding-bottom: 21px;
     }
 }

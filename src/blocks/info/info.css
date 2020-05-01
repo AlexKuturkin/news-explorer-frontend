@@ -8,3 +8,15 @@
     margin: 0 auto;
     width: calc(100% - 208px);
 }
+
+@media screen and (max-width: 1130px) {
+    .info  {   
+        width: calc(100% - 80px);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .info  {   
+        width: calc(100% - 32px);
+    }
+}

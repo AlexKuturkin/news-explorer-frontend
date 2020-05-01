@@ -4,3 +4,19 @@
     margin: 80px auto;
     display: flex;
 }
+
+@media screen and (max-width: 1130px) {
+    .author__container   {   
+        width: calc(100% - 80px);
+        margin: 40px auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .author__container   {   
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 32px);
+        margin: 32px auto 80px;
+    }
+}

@@ -1,3 +1,11 @@
 .footer__nav-container {
     display: flex;
 }
+
+@media screen and (max-width: 550px) {
+    .footer__nav-container  {   
+        order: 1;
+        justify-content: space-between;
+        padding-bottom: 38px;
+    }
+}

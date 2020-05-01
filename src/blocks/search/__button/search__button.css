@@ -1,3 +1,5 @@
+@import url(./_inactive/search__button_inactive.css);
+
 .search__button {
     font-family: Roboto,Arial,Helvetica,sans-serif;
     position: absolute;

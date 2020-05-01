@@ -7,3 +7,25 @@
     grid-gap: 16px;
     padding: 64px 0 64px;
 }
+
+@media screen and (max-width: 1130px) {
+    .articles__list   {   
+        width: calc(100% - 80px);
+        padding: 32px 0;
+        grid-gap: 8px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .articles__list   {   
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .articles__list   {   
+        width: calc(100% - 32px);
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 10px
+    }
+}

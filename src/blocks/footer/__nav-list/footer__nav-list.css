@@ -2,4 +2,12 @@
     list-style: none;
     display: flex;
     margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .footer__nav-list  {   
+        display: flex;
+        flex-direction: column;
+    }
 }

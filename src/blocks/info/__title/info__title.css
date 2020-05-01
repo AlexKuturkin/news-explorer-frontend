@@ -6,3 +6,10 @@
     font-weight: 400;
     margin: 40px 0 28px;
 }
+
+@media screen and (max-width: 1130px) {
+    .info__title  {   
+        font-size: 14px;
+        margin: 24px 0 16px;
+    }
+}

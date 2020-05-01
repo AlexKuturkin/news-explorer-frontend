@@ -14,6 +14,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]/[name].[chunkhash].js',
   },
+  resolve: {
+    alias: {
+      images: path.resolve(__dirname, 'src/images/'),
+    },
+  },
   module: {
     rules: [
       {
@@ -48,18 +53,12 @@ module.exports = {
               optipng: {
                 enabled: false,
               },
-              svgo: {
-                enabled: true,
-              },
               pngquant: {
-                quality: [0.85, 0.9],
+                quality: [0.65, 0.9],
                 speed: 4,
               },
               gifsicle: {
                 interlaced: false,
-              },
-              webp: {
-                quality: 85,
               },
             },
           },
@@ -72,9 +71,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name]/[name].[contenthash].css',
-    }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
@@ -85,7 +81,9 @@ module.exports = {
       template: './src/secondary/secondary.html',
       filename: './secondary/secondary.html',
     }),
-    new WebpackMd5Hash(),
+    new MiniCssExtractPlugin({
+      filename: '[name]/[name].[contenthash].css',
+    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: cssnano,
@@ -94,5 +92,6 @@ module.exports = {
       },
       canPrint: true,
     }),
+    new WebpackMd5Hash(),
   ],
 };

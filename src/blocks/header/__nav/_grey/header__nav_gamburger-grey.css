@@ -4,6 +4,12 @@
 
 @media screen and (max-width: 767px) {
     .header__nav_gamburger-grey  {   
-        padding: 55px 40px 30px;
+        padding: 60px 40px 30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header__nav_gamburger-grey   {   
+        padding: 70px 16px 24px;
     }
 }

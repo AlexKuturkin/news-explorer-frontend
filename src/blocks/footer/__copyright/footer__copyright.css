@@ -4,3 +4,9 @@
     color: #B6BCBF;
     margin: 0;
 }
+
+@media screen and (max-width: 550px) {
+    .footer__copyright  {   
+        order: 2;
+    }
+}

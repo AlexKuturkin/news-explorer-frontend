@@ -1,3 +1,9 @@
 .articles__button-container {
     padding-bottom: 80px;
 }
+
+@media screen and (max-width: 1130px) {
+    .articles__button-container   {   
+        padding-bottom: 40px;
+    }
+}

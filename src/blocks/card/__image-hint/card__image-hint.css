@@ -12,3 +12,29 @@
     top: 24px;
     right: 70px;
 }
+
+@media screen and (max-width: 1310px) {
+    .card__image-hint  {   
+        top: 8px;
+        right: 55px;
+        padding: 14px 5px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .card__image-hint  {   
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .card__image-hint  {   
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card__image-hint  {   
+        font-size: 12px;
+    }
+}
