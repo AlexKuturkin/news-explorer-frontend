@@ -1,15 +1,15 @@
-.header__nav_gamburger-grey {
+.header__nav_hamburger-grey {
     background: #B6BCBF;
 }
 
 @media screen and (max-width: 767px) {
-    .header__nav_gamburger-grey  {   
+    .header__nav_hamburger-grey  {   
         padding: 60px 40px 30px;
     }
 }
 
 @media screen and (max-width: 550px) {
-    .header__nav_gamburger-grey   {   
+    .header__nav_hamburger-grey   {   
         padding: 70px 16px 24px;
     }
 }
