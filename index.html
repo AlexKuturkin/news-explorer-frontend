@@ -8,7 +8,7 @@
   <meta name="desciption" content="News Explorer — поиск новостей">
   <meta name="author" content="Алексей Кутуркин">
   <title>News Explorer</title>
-  <link rel="stylesheet" href="main/main.0fa78fe09b5eb9fe1a55.css" />
+  <link rel="stylesheet" href="main/main.3cabcab075e40629eacc.css" />
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -44,46 +44,60 @@
   </header>
   <main>
     <section class="popup reg">
-      <form class="popup__content">
+      <form class="popup__content" name="reg" novalidate>
         <button type="button" class="popup__button-close"></button>
         <h3 class="popup__title">Регистрация</h3>
-        <label for="reg-email" class="popup__label">Email</label>
-        <input type="email" name="email" id="reg-email" class="popup__input" placeholder="Введите почту" required>
-        <p class="popup__error-item">Ошибка</p>
 
-        <label for="reg-password" class="popup__label">Пароль</label>
-        <input type="password" name="password" id="reg-password" class="popup__input" placeholder="Введите пароль"
-          minlength="10" required>
-        <p class="popup__error-item">Ошибка</p>
+        <div>
+          <label for="reg-email" class="popup__label">Email</label>
+          <input type="email" name="reg_email" id="reg_email" class="popup__input" placeholder="Введите почту" required>
+          <p id="error-reg_email" class="popup__error-item"></p>
+        </div>
 
-        <label for="reg-name" class="popup__label">Имя</label>
-        <input type="text" name="name" id="reg-name" class="popup__input" placeholder="Введите свое имя" minlength="2"
-          maxlength="30" required>
-        <p class="popup__error-item">Ошибка</p>
+        <div>
+          <label for="reg-password" class="popup__label">Пароль</label>
+          <input type="password" name="reg_password" id="reg_password" class="popup__input" placeholder="Введите пароль"
+            minlength="10" required>
+          <p id="error-reg_password" class="popup__error-item"></p>
+        </div>
+
+        <div>
+          <label for="reg-name" class="popup__label">Имя</label>
+          <input type="text" name="reg_name" id="reg_name" class="popup__input" placeholder="Введите свое имя"
+            minlength="2" maxlength="30" required>
+          <p id="error-reg_name" class="popup__error-item"></p>
+        </div>
+
         <p class="popup__error">Такой пользователь уже есть</p>
-        <button type="submit" class="popup__button-reg">
+        <button type="submit" class="popup__button popup__button-reg popup__button_inactive" disabled="true">
           Зарегистрироваться
         </button>
         <p class="popup__advice">
-          или <button type="button" class="popup__advice-link enter-button">Войти</button>
+          или <button type="button" class="popup__advice-link enter-link">Войти</button>
         </p>
       </form>
     </section>
 
     <section class="popup enter">
-      <form class="popup__content">
+      <form class="popup__content" name="enter" novalidate>
         <button type="button" class="popup__button-close enter-close"></button>
         <h3 class="popup__title">Вход</h3>
-        <label for="enter-email" class="popup__label">Email</label>
-        <input type="email" name="email" id="enter-email" class="popup__input" placeholder="Введите почту" required>
-        <p class="popup__error-item">Ошибка</p>
 
-        <label for="enter-password" class="popup__label">Пароль</label>
-        <input type="password" name="password" id="enter-password" class="popup__input" placeholder="Введите пароль"
-          minlength="10" required>
-        <p class="popup__error-item">Ошибка</p>
+        <div>
+          <label for="enter-email" class="popup__label">Email</label>
+          <input type="email" name="enter_email" id="enter_email" class="popup__input" placeholder="Введите почту"
+            required>
+          <p id="error-enter_email" class="popup__error-item"></p>
+        </div>
 
-        <button type="submit" class="popup__button-reg popup__button-reg-enter">
+        <div>
+          <label for="enter-password" class="popup__label">Пароль</label>
+          <input type="password" name="enter_password" id="enter_password" class="popup__input"
+            placeholder="Введите пароль" minlength="10" required>
+          <p id="error-enter_password" class="popup__error-item"></p>
+        </div>
+
+        <button type="submit" class="popup__button popup__button-enter popup__button_inactive" disabled="true">
           Войти
         </button>
         <p class="popup__advice">
@@ -96,7 +110,7 @@
       <div class="popup__content">
         <button type="button" class="popup__button-close success-close"></button>
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-        <button type="button" class="popup__advice-link">Выполнить вход</button>
+        <button type="button" class="popup__advice-link enter-link-from-success">Выполнить вход</button>
       </div>
     </section>
 
@@ -239,7 +253,7 @@
       </div>
     </div>
   </footer>
-  <script src="main/main.395add6a2e17ee3c2abb.js"></script>
+  <script src="main/main.74706cfd55273fe5ae69.js"></script>
 </body>
 
 </html>
