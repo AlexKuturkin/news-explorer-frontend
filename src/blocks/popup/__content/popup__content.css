@@ -1,3 +1,5 @@
+@import url(./_invalid/popup__content_invalid.css);
+
 .popup__content {
 	width: 430px;
 	min-height: 182px;

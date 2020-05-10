@@ -22,9 +22,12 @@
               class="header__nav-link header__nav-link_active header__nav-link_white">Главная</a>
           </li>
           <li class="header__nav-list-item"><a href="secondary/secondary.html"
-              class="header__nav-link header__nav-link_save header__nav-link_grey">Сохранённые статьи</a></li>
+              class="header__nav-link header__nav-link_save header__nav-link_grey header__element_hide">Сохранённые
+              статьи</a></li>
         </ul>
-        <button type="button" class="header__button header__button_white">Авторизоваться</button>
+        <button type="button" class="header__button header__button_white"><span
+            class="user-name">Авторизоваться</span><img class="header__button-logout header__element_hide"
+            src=".<%= require('./images/logout-white.svg')%>" alt="выход" /></button>
       </nav>
       <button type="button" class="header__hamburger close"><svg class="header__toggle" width="24" height="24"
           viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,47 +46,27 @@
     </div>
   </header>
   <main>
-    <section class="popup reg">
-      <form class="popup__content">
-        <button type="button" class="popup__button-close"></button>
-        <h3 class="popup__title">Регистрация</h3>
-        <label for="reg-email" class="popup__label">Email</label>
-        <input type="email" name="email" id="reg-email" class="popup__input" placeholder="Введите почту" required>
-        <p class="popup__error-item">Ошибка</p>
-
-        <label for="reg-password" class="popup__label">Пароль</label>
-        <input type="password" name="password" id="reg-password" class="popup__input" placeholder="Введите пароль"
-          minlength="10" required>
-        <p class="popup__error-item">Ошибка</p>
-
-        <label for="reg-name" class="popup__label">Имя</label>
-        <input type="text" name="name" id="reg-name" class="popup__input" placeholder="Введите свое имя" minlength="2"
-          maxlength="30" required>
-        <p class="popup__error-item">Ошибка</p>
-        <p class="popup__error">Такой пользователь уже есть</p>
-        <button type="submit" class="popup__button-reg">
-          Зарегистрироваться
-        </button>
-        <p class="popup__advice">
-          или <button type="button" class="popup__advice-link enter-button">Войти</button>
-        </p>
-      </form>
-    </section>
-
     <section class="popup enter">
-      <form class="popup__content">
+      <form class="popup__content" name="enter" novalidate>
         <button type="button" class="popup__button-close enter-close"></button>
         <h3 class="popup__title">Вход</h3>
-        <label for="enter-email" class="popup__label">Email</label>
-        <input type="email" name="email" id="enter-email" class="popup__input" placeholder="Введите почту" required>
-        <p class="popup__error-item">Ошибка</p>
 
-        <label for="enter-password" class="popup__label">Пароль</label>
-        <input type="password" name="password" id="enter-password" class="popup__input" placeholder="Введите пароль"
-          minlength="10" required>
-        <p class="popup__error-item">Ошибка</p>
+        <div>
+          <label for="enter-email" class="popup__label">Email</label>
+          <input type="email" name="enter_email" id="enter_email" class="popup__input" placeholder="Введите почту"
+            required>
+          <p id="error-enter_email" class="popup__error-item"></p>
+        </div>
 
-        <button type="submit" class="popup__button-reg popup__button-reg-enter">
+        <div>
+          <label for="enter-password" class="popup__label">Пароль</label>
+          <input type="password" name="enter_password" id="enter_password" class="popup__input"
+            placeholder="Введите пароль" minlength="10" required>
+          <p id="error-enter_password" class="popup__error-item"></p>
+        </div>
+
+        <p class="popup__error popup__error-server-enter"></p>
+        <button type="submit" class="popup__button popup__button-enter popup__button_inactive" disabled="true">
           Войти
         </button>
         <p class="popup__advice">
@@ -92,11 +75,46 @@
       </form>
     </section>
 
+    <section class="popup reg">
+      <form class="popup__content" name="reg" novalidate>
+        <button type="button" class="popup__button-close reg-close"></button>
+        <h3 class="popup__title">Регистрация</h3>
+
+        <div>
+          <label for="reg-email" class="popup__label">Email</label>
+          <input type="email" name="reg_email" id="reg_email" class="popup__input" placeholder="Введите почту" required>
+          <p id="error-reg_email" class="popup__error-item"></p>
+        </div>
+
+        <div>
+          <label for="reg-password" class="popup__label">Пароль</label>
+          <input type="password" name="reg_password" id="reg_password" class="popup__input" placeholder="Введите пароль"
+            minlength="10" required>
+          <p id="error-reg_password" class="popup__error-item"></p>
+        </div>
+
+        <div>
+          <label for="reg-name" class="popup__label">Имя</label>
+          <input type="text" name="reg_name" id="reg_name" class="popup__input" placeholder="Введите свое имя"
+            minlength="2" maxlength="30" required>
+          <p id="error-reg_name" class="popup__error-item"></p>
+        </div>
+
+        <p class="popup__error popup__error-server-reg"></p>
+        <button type="submit" class="popup__button popup__button-reg popup__button_inactive" disabled="true">
+          Зарегистрироваться
+        </button>
+        <p class="popup__advice">
+          или <button type="button" class="popup__advice-link enter-link">Войти</button>
+        </p>
+      </form>
+    </section>
+
     <section class="popup success">
       <div class="popup__content">
         <button type="button" class="popup__button-close success-close"></button>
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-        <button type="button" class="popup__advice-link enter-button-from-success">Выполнить вход</button>
+        <button type="button" class="popup__advice-link enter-link-from-success">Выполнить вход</button>
       </div>
     </section>
 

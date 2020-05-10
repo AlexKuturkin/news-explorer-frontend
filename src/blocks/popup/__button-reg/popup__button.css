@@ -1,6 +1,6 @@
-@import url(./_inactive/popup__button-reg_inactive.css);
+@import url(./_inactive/popup__button_inactive.css);
 
-.popup__button-reg {
+.popup__button {
     font-family: Roboto,Arial,sans-serif;
     width: 100%;
     height: 63px;
@@ -15,10 +15,10 @@
     cursor: pointer;
 }
 
-.popup__button-reg:focus {
+.popup__button:focus {
     outline: 1px solid #347EFF;
 }
 
-.popup__button-reg:hover {
+.popup__button:hover {
     background-color: #347EFF;
 }
