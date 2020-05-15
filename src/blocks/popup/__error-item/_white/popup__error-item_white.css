@@ -1,0 +1,13 @@
+.popup__error-item.popup__error-item_white {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  text-align: center;
+  color: wheat;
+}
+
+@media screen and (max-width: 550px) {
+  .popup__error-item.popup__error-item_white {
+    top: 61px;
+  }
+}

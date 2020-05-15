@@ -2,5 +2,14 @@
   "extends": "airbnb-base",
   "parserOptions": {
     "ecmaVersion": 6
+  },
+  "rules": {
+    "no-console": 0,
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "class-methods-use-this": "off",
+    "comma-dangle": "off",
+    "quotes": "off",
+    "operator-linebreak": "off"
   }
 }

@@ -2,10 +2,11 @@
 @import url(./__list/articles__list.css);
 @import url(./__button-container/articles__button-container.css);
 @import url(./__button/articles__button.css);
+@import url(./_hide/articles_hide.css);
 
 .articles {
-    max-width: 100%;
-    margin: 0 auto 0;
-    background: #F5F6F7;
-    padding: 0;
+  max-width: 100%;
+  margin: 0 auto 0;
+  background: #f5f6f7;
+  padding: 0;
 }

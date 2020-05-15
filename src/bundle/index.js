@@ -1,102 +1,129 @@
-import '../index.css';
+import "../index.css";
 
-const menu = document.querySelector(".header__nav");
+import Popup from "../js/components/popup";
 
-const authorizationButtonFromMenu = document.querySelector(".header__button");
-authorizationButtonFromMenu.addEventListener("click", function () {
-    if (authorizationButtonFromMenu.textContent === 'Авторизоваться') {
-        menu.classList.remove("header__nav_hamburger", "header__nav_hamburger-black");
-        changeHamburger.close();
-        enterForm.reset();
-        changeButton.inactiveButton(popupButtonEnter);
-        changeTextMessageServerEnterError.clear();
-        changePopupEnter.open();
-        changeHamburgerToggle.disactivate();
-    }
-});
+import Hamburger from "../js/components/hamburger";
 
-const enterLinkFromReg = document.querySelector(".enter-link");
-enterLinkFromReg.addEventListener("click", function () {
-    changePopupReg.close();
-    changeTextMessageServerEnterError.clear();
-    enterForm.reset();
-    changeButton.inactiveButton(popupButtonEnter);
-    changePopupEnter.open();
-});
+import handleValidate from "../js/utils/validate";
 
+import Button from "../js/components/button";
 
-const authorizationLinkFromEnter = document.querySelector(".popup__advice-link_big");
-authorizationLinkFromEnter.addEventListener("click", function () {
-    changePopupEnter.close();
-    regForm.reset();
-    changeTextMessageServerRegError.clear();
-    changeButton.inactiveButton(popupButtonReg);
-    changePopupReg.open();
-});
+import MainApi from "../js/api/mainApi";
+import { BASE_URL } from "../js/constants/api";
+import { AUTH, ERROR_PLUS_INTERNET } from "../js/constants/texts";
 
+import TextMessage from "../js/components/textMessage";
+import Header from "../js/components/header";
+import Menu from "../js/components/menu";
+import NewsApi from "../js/api/newsApi";
+import CardContainer from "../js/components/cardContainer";
+import Preloader from "../js/components/preloader";
+import ArticlesList from "../js/components/articlesSection";
 
-const closePopup = document.querySelector(".reg-close");
-closePopup.addEventListener("click", function () {
-    changePopupEnter.close();
-    changePopupReg.close();
-    changeHamburgerToggle.activate();
-});
+const closeHamburger = document.querySelector(".header__hamburger_close");
+const changeHamburger = new Hamburger(closeHamburger);
 
+const enterForm = document.forms.enter;
 
-const enterClosePopup = document.querySelector(".enter-close");
-enterClosePopup.addEventListener("click", function () {
-    changePopupEnter.close();
-    changePopupReg.close();
-    changeHamburgerToggle.activate();
-});
+const changeButton = new Button();
 
-const successClosePopup = document.querySelector(".success-close");
-successClosePopup.addEventListener("click", function () {
-    changePopupSuccess.close();
-    changePopupEnter.close();
-    changePopupReg.close();
-    changeHamburgerToggle.activate();
-});
-
-
-const enterLinkFromSuccess = document.querySelector(".enter-link-from-success");
-enterLinkFromSuccess.addEventListener("click", function () {
-    changePopupSuccess.close();
-    changePopupEnter.open();
-});
-
-
-import Popup from '../js/components/popup';
-const popupReg = document.querySelector(".reg");
-const changePopupReg = new Popup(popupReg);
+const popupButtonEnter = document.querySelector(".popup__button-enter");
+const serverEnterError = document.querySelector(".popup__error-server-enter");
+const changeTextMessageServerEnterError = new TextMessage(serverEnterError);
 
 const popupEnter = document.querySelector(".enter");
 const changePopupEnter = new Popup(popupEnter);
 
-const popupSuccess = document.querySelector(".success");
-const changePopupSuccess = new Popup(popupSuccess);
-
-
-import Hamburger from '../js/components/hamburger';
-const closeHamburger = document.querySelector(".header__hamburger_close");
-const changeHamburger = new Hamburger(closeHamburger);
-
-closeHamburger.addEventListener("click", function () {
-    menu.classList.remove("header__nav_hamburger", "header__nav_hamburger-black");
-    changeHamburger.close();
-});
-
 const openHamburger = document.querySelector(".header__toggle");
 const changeHamburgerToggle = new Hamburger(openHamburger);
-openHamburger.addEventListener("click", function () {
-    menu.classList.add("header__nav_hamburger", "header__nav_hamburger-black");
-    changeHamburger.open();
+
+const popupReg = document.querySelector(".reg");
+const changePopupReg = new Popup(popupReg);
+
+const userName = document.querySelector(".user-name");
+const changeTextMessageNameUser = new TextMessage(userName);
+
+const menu = document.querySelector(".header__nav");
+const changeMenu = new Menu(menu);
+
+const authorizationButtonFromMenu = document.querySelector(".header__button");
+authorizationButtonFromMenu.addEventListener("click", () => {
+  if (userName.textContent === "Авторизоваться") {
+    changeMenu.close();
+    changeHamburger.close();
+    enterForm.reset();
+    changeButton.inactiveButton(popupButtonEnter);
+    changeTextMessageServerEnterError.clear();
+    changePopupEnter.open();
+    changeHamburgerToggle.disactivate();
+  }
 });
 
+const enterLinkFromReg = document.querySelector(".enter-link");
+enterLinkFromReg.addEventListener("click", () => {
+  changePopupReg.close();
+  changeTextMessageServerEnterError.clear();
+  enterForm.reset();
+  changeButton.inactiveButton(popupButtonEnter);
+  changePopupEnter.open();
+});
 
-import handleValidate from '../js/utils/validate';
-
+const authorizationLinkFromEnter = document.querySelector(
+  ".popup__advice-link_big"
+);
 const regForm = document.forms.reg;
+const serverRegError = document.querySelector(".popup__error-server-reg");
+const changeTextMessageServerRegError = new TextMessage(serverRegError);
+const popupButtonReg = document.querySelector(".popup__button-reg");
+
+authorizationLinkFromEnter.addEventListener("click", () => {
+  changePopupEnter.close();
+  regForm.reset();
+  changeTextMessageServerRegError.clear();
+  changeButton.inactiveButton(popupButtonReg);
+  changePopupReg.open();
+});
+
+const closePopup = document.querySelector(".reg-close");
+closePopup.addEventListener("click", () => {
+  changePopupEnter.close();
+  changePopupReg.close();
+  changeHamburgerToggle.activate();
+});
+
+const enterClosePopup = document.querySelector(".enter-close");
+enterClosePopup.addEventListener("click", () => {
+  changePopupEnter.close();
+  changePopupReg.close();
+  changeHamburgerToggle.activate();
+});
+
+const popupSuccess = document.querySelector(".success");
+const changePopupSuccess = new Popup(popupSuccess);
+const successClosePopup = document.querySelector(".success-close");
+successClosePopup.addEventListener("click", () => {
+  changePopupSuccess.close();
+  changePopupEnter.close();
+  changePopupReg.close();
+  changeHamburgerToggle.activate();
+});
+
+const enterLinkFromSuccess = document.querySelector(".enter-link-from-success");
+enterLinkFromSuccess.addEventListener("click", () => {
+  changePopupSuccess.close();
+  changePopupEnter.open();
+});
+
+closeHamburger.addEventListener("click", () => {
+  changeMenu.close();
+  changeHamburger.close();
+});
+
+openHamburger.addEventListener("click", () => {
+  changeMenu.open();
+  changeHamburger.open();
+});
+
 const regEmailForm = regForm.elements.reg_email;
 const regPasswordForm = regForm.elements.reg_password;
 const regNameForm = regForm.elements.reg_name;
@@ -105,101 +132,175 @@ regEmailForm.addEventListener("input", handleValidate);
 regPasswordForm.addEventListener("input", handleValidate);
 regNameForm.addEventListener("input", handleValidate);
 
-const enterForm = document.forms.enter;
 const enterEmailForm = enterForm.elements.enter_email;
 const enterPasswordForm = enterForm.elements.enter_password;
 
 enterEmailForm.addEventListener("input", handleValidate);
 enterPasswordForm.addEventListener("input", handleValidate);
 
+const searchForm = document.forms.search;
+const searchText = searchForm.elements.search_text;
+searchText.addEventListener("input", handleValidate);
 
-import Button from '../js/components/button';
-const changeButton = new Button();
+const searchButton = document.querySelector(".search__button");
 
-const popupButtonReg = document.querySelector(".popup__button-reg");
-const popupButtonEnter = document.querySelector(".popup__button-enter");
+changeButton.activeDisactive(
+  regForm,
+  regEmailForm,
+  regPasswordForm,
+  regNameForm,
+  popupButtonReg
+);
 
-changeButton.activateDisactivate(regForm, regEmailForm, regPasswordForm, regNameForm, popupButtonReg);
-changeButton.activateDisactivate2(enterForm, enterEmailForm, enterPasswordForm, popupButtonEnter);
+changeButton.activeDisactive2(
+  enterForm,
+  enterEmailForm,
+  enterPasswordForm,
+  popupButtonEnter
+);
 
+changeButton.activeDisactive3(searchForm, searchText, searchButton);
 
-import MainApi from '../js/api/mainApi';
-import { BASE_URL } from '../js/constants/api';
-import { NO_INTERNET } from '../js/constants/texts';
 const changeMainApi = new MainApi(BASE_URL);
 
-import TextMessage from '../js/components/textMessage';
-const serverRegError = document.querySelector(".popup__error-server-reg");
-const changeTextMessageServerRegError = new TextMessage(serverRegError);
-
-
-regForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    changeMainApi.signUp(regEmailForm.value, regPasswordForm.value, regNameForm.value)
-        .then(res => {
-            if (res.statusCode === 400 || 409) {
-                changeTextMessageServerRegError.set(res.message);
-            }
-            if (res.email && res.name) {
-                changeTextMessageServerRegError.clear();
-                changePopupReg.close();
-                changePopupSuccess.open();
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            changeTextMessageServerRegError.set(NO_INTERNET);
-        });
+regForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  changeMainApi
+    .signUp(regEmailForm.value, regPasswordForm.value, regNameForm.value)
+    .then((res) => {
+      // eslint-disable-next-line no-constant-condition
+      if (res.statusCode === 400 || 409) {
+        changeTextMessageServerRegError.set(res.message);
+      }
+      if (res.email && res.name) {
+        changeTextMessageServerRegError.clear();
+        changePopupReg.close();
+        changePopupSuccess.open();
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      changeTextMessageServerRegError.set(ERROR_PLUS_INTERNET);
+    });
 });
-
-const serverEnterError = document.querySelector(".popup__error-server-enter");
-const changeTextMessageServerEnterError = new TextMessage(serverEnterError);
-
-const userName = document.querySelector(".user-name");
-const changeTextMessageNameUser = new TextMessage(userName);
 
 const savedArticles = document.querySelector(".header__nav-link_save");
 const logoutIcon = document.querySelector(".header__button-logout");
-import Header from '../js/components/header';
 const changeHeaderSavedArticles = new Header(savedArticles);
 const changeHeaderLogoutIcon = new Header(logoutIcon);
 
-enterForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    changeMainApi.signIn(enterEmailForm.value, enterPasswordForm.value)
-        .then(res => {
-            if (res.statusCode === 400) {
-                changeTextMessageServerEnterError.set(res.message);
-            }
-            if (res.token) {
-                changeMainApi.me()
-                    .then(res => {
-                        changeTextMessageNameUser.set(res.name);
-                        changeHeaderSavedArticles.show();
-                        changeHeaderLogoutIcon.show();
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    });
-
-                changePopupEnter.close();
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            changeTextMessageServerEnterError.set(NO_INTERNET);
-        });
-});
-
-
-changeMainApi.me()
-    .then(res => {
-        if (res.statusCode !== 400) {
-            changeTextMessageNameUser.set(res.name);
+enterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  changeMainApi
+    .signIn(enterEmailForm.value, enterPasswordForm.value)
+    .then((res) => {
+      // eslint-disable-next-line no-constant-condition
+      if (res.statusCode === 400 || 401) {
+        changeTextMessageServerEnterError.set(res.message);
+      }
+      if (res.token) {
+        changeMainApi
+          .me()
+          .then((response) => {
+            changeTextMessageNameUser.set(response.name);
             changeHeaderSavedArticles.show();
             changeHeaderLogoutIcon.show();
-        }
+            changeHamburgerToggle.activate();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        changePopupEnter.close();
+      }
     })
-    .catch(err => {
-        console.log(err)
+    .catch((err) => {
+      console.log(err);
+      changeTextMessageServerEnterError.set(ERROR_PLUS_INTERNET);
     });
+});
+
+changeMainApi
+  .me()
+  .then((res) => {
+    if (res.statusCode !== 400) {
+      changeTextMessageNameUser.set(res.name);
+      changeHeaderSavedArticles.show();
+      changeHeaderLogoutIcon.show();
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+logoutIcon.addEventListener("click", () => {
+  changeMainApi
+    .logout()
+    .then((res) => {
+      console.log(res);
+      changeTextMessageNameUser.set(AUTH);
+      changeHeaderSavedArticles.remove();
+      changeHeaderLogoutIcon.remove();
+    })
+    .catch((err) => {
+      console.log(err);
+      // eslint-disable-next-line no-alert
+      alert(ERROR_PLUS_INTERNET);
+    });
+});
+
+const preloader = document.querySelector(".preloader");
+const changePreloader = new Preloader(preloader);
+
+const notFound = document.querySelector(".not-found");
+const changeNotFound = new Preloader(notFound);
+
+const notFoundErrorInternet = document.querySelector(
+  ".not-found-error-internet"
+);
+const changeNotFoundErrorInternet = new Preloader(notFoundErrorInternet);
+
+const articlesSection = document.querySelector(".articles");
+const changeArticlesList = new ArticlesList(articlesSection);
+
+const changeNewsApi = new NewsApi();
+const changeCard = new CardContainer();
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  changeNotFoundErrorInternet.hide();
+  changeNotFound.hide();
+  const articlesList = document.querySelector(".articles__list");
+  // console.log(articlesList);
+  changeCard.clear(articlesList);
+  changeArticlesList.hide();
+  changeNewsApi
+    .getNews(searchText.value)
+    .then((res) => {
+      console.log(res);
+      changePreloader.show();
+      setTimeout(() => {
+        if (res.totalResults > 0) {
+          changePreloader.hide();
+          changeArticlesList.show();
+          changeCard.render(res.articles, articlesList);
+        } else {
+          changePreloader.hide();
+          changeNotFound.show();
+        }
+      }, 1000);
+    })
+    .catch((err) => {
+      changePreloader.show();
+      setTimeout(() => {
+        changePreloader.hide();
+        changeNotFoundErrorInternet.show();
+      }, 1000);
+      console.log(err);
+    });
+});
+
+/* const articlesButton = document.querySelector(".articles__button");
+articlesButton.addEventListener("click", () => {
+  changeNewsApi
+  .getNews(searchText.value)
+}); */
