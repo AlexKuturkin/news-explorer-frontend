@@ -57,4 +57,12 @@ export default class Button {
     name.classList.add("popup__button_inactive");
     name.setAttribute("disabled", "true");
   }
+
+  hideButton(name) {
+    name.classList.add("articles_hide");
+  }
+
+  showButton(name) {
+    name.classList.remove("articles_hide");
+  }
 }

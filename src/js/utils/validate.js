@@ -35,7 +35,6 @@ export function validate(element) {
 /* Функция проверки валидации в инпутах */
 export default function handleValidate(event) {
   event.target.parentNode.classList.remove("popup__content_invalid");
-  // eslint-disable-next-line no-param-reassign
   event.target.textContent = "";
 
   validate(event.target);

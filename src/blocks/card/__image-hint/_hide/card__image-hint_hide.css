@@ -1,5 +1,7 @@
-@media screen and (max-width: 1000px) {
-    .card__image-hint_hide  {   
-        display: none;
-    }
+.card__image-hint_hide {
+  display: none;
+}
+
+.show .card__image-hint_hide {
+  display: block;
 }

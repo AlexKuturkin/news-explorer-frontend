@@ -1,3 +1,8 @@
 // export const ERROR = "Возникла ошибка";
-export const AUTH = "Авторизоваться";
-export const ERROR_PLUS_INTERNET = "Возникла ошибка. Возможно, нет интернета.";
+
+const texts = {
+  auth: "Авторизоваться",
+  errorPlusInternet: "Возникла ошибка. Возможно, нет интернета.",
+};
+
+export default texts;

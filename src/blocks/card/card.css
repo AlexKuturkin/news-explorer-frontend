@@ -9,6 +9,7 @@
 @import url(./__info-title/card__info-title.css);
 @import url(./__info/card__info.css);
 @import url(./__link/card__link.css);
+@import url(./__image-hint/_hide/card__image-hint_hide.css);
 
 .card {
   max-width: 400px;

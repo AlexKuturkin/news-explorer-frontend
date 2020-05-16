@@ -1,1 +1,3 @@
-export const BASE_URL = 'https://api.mestoback.tk/';
+const baseUrl = "https://api.mestoback.tk/";
+
+export default baseUrl;

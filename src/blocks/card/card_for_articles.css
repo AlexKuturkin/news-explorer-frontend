@@ -13,6 +13,30 @@
 @import url(./__image-hint/_hide/card__image-hint_hide.css);
 
 .card {
+  max-width: 400px;
+  position: relative;
+}
+
+@media screen and (max-width: 1439px) {
+  .card {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .card {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    max-width: 224px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
     max-width: 400px;
-    position: relative;
+  }
 }

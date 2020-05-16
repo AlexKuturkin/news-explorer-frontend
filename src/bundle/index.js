@@ -9,8 +9,8 @@ import handleValidate from "../js/utils/validate";
 import Button from "../js/components/button";
 
 import MainApi from "../js/api/mainApi";
-import { BASE_URL } from "../js/constants/api";
-import { AUTH, ERROR_PLUS_INTERNET } from "../js/constants/texts";
+import baseUrl from "../js/constants/api";
+import texts from "../js/constants/texts";
 
 import TextMessage from "../js/components/textMessage";
 import Header from "../js/components/header";
@@ -19,6 +19,7 @@ import NewsApi from "../js/api/newsApi";
 import CardContainer from "../js/components/cardContainer";
 import Preloader from "../js/components/preloader";
 import ArticlesList from "../js/components/articlesSection";
+import Card from "../js/components/card";
 
 const closeHamburger = document.querySelector(".header__hamburger_close");
 const changeHamburger = new Hamburger(closeHamburger);
@@ -161,7 +162,7 @@ changeButton.activeDisactive2(
 
 changeButton.activeDisactive3(searchForm, searchText, searchButton);
 
-const changeMainApi = new MainApi(BASE_URL);
+const changeMainApi = new MainApi(baseUrl);
 
 regForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -180,7 +181,7 @@ regForm.addEventListener("submit", (event) => {
     })
     .catch((err) => {
       console.log(err);
-      changeTextMessageServerRegError.set(ERROR_PLUS_INTERNET);
+      changeTextMessageServerRegError.set(texts.errorPlusInternet);
     });
 });
 
@@ -188,6 +189,12 @@ const savedArticles = document.querySelector(".header__nav-link_save");
 const logoutIcon = document.querySelector(".header__button-logout");
 const changeHeaderSavedArticles = new Header(savedArticles);
 const changeHeaderLogoutIcon = new Header(logoutIcon);
+const changeCardContainer = new CardContainer();
+const articlesSection = document.querySelector(".articles");
+const changeArticlesList = new ArticlesList(articlesSection);
+const articlesList = document.querySelector(".articles__list");
+
+let logged = false;
 
 enterForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -199,6 +206,9 @@ enterForm.addEventListener("submit", (event) => {
         changeTextMessageServerEnterError.set(res.message);
       }
       if (res.token) {
+        changeCardContainer.clear(articlesList);
+        changeArticlesList.hide();
+        logged = true;
         changeMainApi
           .me()
           .then((response) => {
@@ -210,13 +220,12 @@ enterForm.addEventListener("submit", (event) => {
           .catch((err) => {
             console.log(err);
           });
-
         changePopupEnter.close();
       }
     })
     .catch((err) => {
       console.log(err);
-      changeTextMessageServerEnterError.set(ERROR_PLUS_INTERNET);
+      changeTextMessageServerEnterError.set(texts.errorPlusInternet);
     });
 });
 
@@ -224,6 +233,7 @@ changeMainApi
   .me()
   .then((res) => {
     if (res.statusCode !== 400) {
+      logged = true;
       changeTextMessageNameUser.set(res.name);
       changeHeaderSavedArticles.show();
       changeHeaderLogoutIcon.show();
@@ -237,15 +247,17 @@ logoutIcon.addEventListener("click", () => {
   changeMainApi
     .logout()
     .then((res) => {
-      console.log(res);
-      changeTextMessageNameUser.set(AUTH);
+      logged = false;
+      changeTextMessageNameUser.set(texts.auth);
       changeHeaderSavedArticles.remove();
       changeHeaderLogoutIcon.remove();
+      changeCardContainer.clear(articlesList);
+      changeArticlesList.hide();
     })
     .catch((err) => {
       console.log(err);
       // eslint-disable-next-line no-alert
-      alert(ERROR_PLUS_INTERNET);
+      alert(texts.errorPlusInternet);
     });
 });
 
@@ -260,29 +272,33 @@ const notFoundErrorInternet = document.querySelector(
 );
 const changeNotFoundErrorInternet = new Preloader(notFoundErrorInternet);
 
-const articlesSection = document.querySelector(".articles");
-const changeArticlesList = new ArticlesList(articlesSection);
-
 const changeNewsApi = new NewsApi();
-const changeCard = new CardContainer();
+
+let responseFromNewsApi = "";
+let keyword = "";
+const articlesButton = document.querySelector(".articles__button");
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   changeNotFoundErrorInternet.hide();
   changeNotFound.hide();
-  const articlesList = document.querySelector(".articles__list");
-  // console.log(articlesList);
-  changeCard.clear(articlesList);
+  changeCardContainer.clear(articlesList);
+  changeCardContainer.clearСounter();
+  changeButton.showButton(articlesButton);
   changeArticlesList.hide();
   changeNewsApi
     .getNews(searchText.value)
     .then((res) => {
-      console.log(res);
+      keyword = searchText.value;
+      responseFromNewsApi = res;
       changePreloader.show();
       setTimeout(() => {
         if (res.totalResults > 0) {
           changePreloader.hide();
           changeArticlesList.show();
-          changeCard.render(res.articles, articlesList);
+          if (res.totalResults <= 3) {
+            changeButton.hideButton(articlesButton);
+          }
+          changeCardContainer.render(res.articles, articlesList, keyword);
         } else {
           changePreloader.hide();
           changeNotFound.show();
@@ -299,8 +315,79 @@ searchForm.addEventListener("submit", (event) => {
     });
 });
 
-/* const articlesButton = document.querySelector(".articles__button");
 articlesButton.addEventListener("click", () => {
-  changeNewsApi
-  .getNews(searchText.value)
-}); */
+  const cards = document.querySelectorAll(".card").length;
+  changeCardContainer.render(
+    responseFromNewsApi.articles,
+    articlesList,
+    keyword
+  );
+
+  if (
+    cards + 3 >= responseFromNewsApi.totalResults ||
+    (cards + 3 >= 100 && responseFromNewsApi.totalResults >= 100)
+  ) {
+    changeButton.hideButton(articlesButton);
+  }
+});
+
+const changeCard = new Card();
+
+articlesList.addEventListener("mouseover", () => {
+  if (!logged) {
+    changeCard.showAdvice();
+  }
+});
+
+articlesList.addEventListener("mouseout", () => {
+  if (!logged) {
+    changeCard.hideAdvice();
+  }
+});
+
+articlesList.addEventListener("click", () => {
+  if (logged) {
+    const fieldsArticle = changeCard.saveArticle();
+    const saveIcon = changeCard.saveIcon();
+
+    if (fieldsArticle) {
+      changeMainApi
+        .saveArticle(
+          fieldsArticle.keyword,
+          fieldsArticle.title,
+          fieldsArticle.text,
+          fieldsArticle.date,
+          fieldsArticle.source,
+          fieldsArticle.link,
+          fieldsArticle.image
+        )
+        .then((response) => {
+          if (response.data) {
+            saveIcon.eventTarget.classList.add("card__image-save_saved");
+            const idArticle = response.data._id;
+            fieldsArticle.id.setAttribute("id", idArticle);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          // eslint-disable-next-line no-alert
+          alert(texts.errorPlusInternet);
+        });
+    }
+
+    if (!fieldsArticle && saveIcon.cardId) {
+      changeMainApi
+        .deleteArticle(saveIcon.cardId)
+        .then((res) => {
+          if (res.message) {
+            saveIcon.eventTarget.classList.remove("card__image-save_saved");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          // eslint-disable-next-line no-alert
+          alert(texts.errorPlusInternet);
+        });
+    }
+  }
+});

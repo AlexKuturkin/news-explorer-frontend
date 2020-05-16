@@ -1,8 +1,6 @@
 const dateArtirle = (string) => {
-  console.log(string);
   let day = string.slice(8, 10);
   if (day[0] === "0") {
-    // console.log(day[0]);
     // eslint-disable-next-line prefer-destructuring
     day = day[1];
   }
