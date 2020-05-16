@@ -37,6 +37,7 @@ export default class Card {
     if (
       (event.target.classList.contains("card__image-save") ||
         event.target.classList.contains("card__image-path")) &&
+      !event.target.parentNode.classList.contains("card__image-save_saved") &&
       !event.target.classList.contains("card__image-save_saved")
     ) {
       const id = event.target.parentNode.parentNode;

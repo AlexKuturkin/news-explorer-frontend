@@ -135,6 +135,6 @@ export default class CardContainer {
   }
 
   clear(container) {
-    container.innerHTML = "";
+    while (container.firstChild) container.removeChild(container.firstChild);
   }
 }

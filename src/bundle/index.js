@@ -253,6 +253,8 @@ logoutIcon.addEventListener("click", () => {
       changeHeaderLogoutIcon.remove();
       changeCardContainer.clear(articlesList);
       changeArticlesList.hide();
+      searchText.value = "";
+      changeButton.inactiveButtonSearch(searchButton);
     })
     .catch((err) => {
       console.log(err);
@@ -381,6 +383,9 @@ articlesList.addEventListener("click", () => {
         .then((res) => {
           if (res.message) {
             saveIcon.eventTarget.classList.remove("card__image-save_saved");
+            saveIcon.eventTarget.parentNode.classList.remove(
+              "card__image-save_saved"
+            );
           }
         })
         .catch((err) => {

@@ -108,11 +108,12 @@ export default class MainApi {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res) => {
+    }).then((res) => res.json());
+    /* .then((res) => {
       if (res.ok) {
         return res.json();
       }
       return Promise.reject(res);
-    });
+    }); */
   }
 }

@@ -58,6 +58,11 @@ export default class Button {
     name.setAttribute("disabled", "true");
   }
 
+  inactiveButtonSearch(name) {
+    name.classList.add("search__button_inactive");
+    name.setAttribute("disabled", "true");
+  }
+
   hideButton(name) {
     name.classList.add("articles_hide");
   }
