@@ -1,0 +1,9 @@
+@import url(./_save/header__nav-link_save.css);
+@import url(./_active/header__nav-link_active.css);
+@import url(./_white/header__nav-link_white.css);
+@import url(./_grey/header__nav-link_grey.css);
+
+.header__nav-link {
+    text-decoration: none;
+    cursor: pointer;
+}

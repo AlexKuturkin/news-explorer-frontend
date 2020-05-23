@@ -1,0 +1,10 @@
+@import url(../vendor/fonts.css);
+@import url(../blocks/header/header_for_articles.css);
+@import url(../blocks/info/info.css);
+@import url(../blocks/articles/articles.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/card/card_for_articles.css);
+
+body {
+	margin: 0
+}

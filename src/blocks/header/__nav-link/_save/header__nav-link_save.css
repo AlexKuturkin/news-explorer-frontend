@@ -1,0 +1,9 @@
+.header__nav-link_save {
+    margin: 0 32px 0 0;
+}
+
+@media screen and (max-width: 767px) {
+    .header__nav-link_save  {   
+        margin: 0;
+    }
+}

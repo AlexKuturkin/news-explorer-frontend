@@ -1,0 +1,9 @@
+.header__nav-link_active {
+    padding-bottom: 25px;
+}
+
+@media screen and (max-width: 1130px) {
+    .header__nav-link_active   {   
+        padding-bottom: 21px;
+    }
+}

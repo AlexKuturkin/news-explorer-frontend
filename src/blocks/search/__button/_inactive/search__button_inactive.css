@@ -1,0 +1,14 @@
+.search__button.search__button_inactive {
+  color: #b6bcbf;
+  background: #e6e8eb;
+}
+
+.search__button.search__button_inactive:focus {
+  color: #b6bcbf;
+  background: #e6e8eb;
+}
+
+.search__button.search__button_inactive:hover {
+  color: #b6bcbf;
+  background: #e6e8eb;
+}

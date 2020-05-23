@@ -1,0 +1,12 @@
+.header__nav-link_white {
+    color: #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+    margin-right: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .header__nav-link_white  {   
+        border-bottom: none;
+        padding-top: 10px;
+    }
+}

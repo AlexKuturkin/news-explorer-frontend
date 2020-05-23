@@ -1,0 +1,14 @@
+.info__text {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: Roboto, Helvetica, Arial, sans-serif; 
+    color: #1A1B22;
+    margin: 0 0 56px;
+}
+
+@media screen and (max-width: 1130px) {
+    .info__text  {   
+        font-size: 14px;
+        margin: 0 0 32px;
+    }
+}

@@ -1,0 +1,10 @@
+.header__nav-link_black {
+    color: #1A1B22;
+    margin-right: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .header__nav-link_black  {   
+        padding-top: 18px;
+    }
+}

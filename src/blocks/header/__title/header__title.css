@@ -1,0 +1,23 @@
+.header__title {
+    font-family: Roboto Slab,Helvetica,Arial,sans-serif;
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .header__title   {   
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header__title   {   
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

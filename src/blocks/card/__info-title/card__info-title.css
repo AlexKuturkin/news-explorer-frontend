@@ -1,0 +1,33 @@
+.card__info-title {
+  font-family: Roboto Slab, Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1a1b22;
+  font-weight: 100;
+  margin: 12px 0 16px;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1310px) {
+  .card__info-title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .card__info-title {
+    margin: 12px 0 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card__info-title {
+    margin: 10px 0 10px;
+    -webkit-line-clamp: 2;
+  }
+}

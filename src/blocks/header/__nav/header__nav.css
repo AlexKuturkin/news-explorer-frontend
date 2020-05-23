@@ -1,0 +1,35 @@
+@import url(./_hamburger/header__nav_hamburger.css);
+
+.header__nav {
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;  
+}
+
+@media screen and (max-width: 1130px) {
+    .header__nav  {   
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__nav   {   
+        display: none; 
+        position: absolute;
+        flex-direction: column;
+        top: -12px;
+        left: 0;
+        width: calc(100% - 80px);
+        padding: 50px 40px 30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header__nav   {   
+        width: calc(100% - 32px);
+        padding: 60px 16px 24px;
+    }
+}

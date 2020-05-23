@@ -1,0 +1,14 @@
+.popup__button.popup__button_inactive {
+    color: #B6BCBF;
+    background: #E6E8EB;
+}
+
+.popup__button.popup__button_inactive:focus {
+    color: #B6BCBF;
+    background: #E6E8EB;
+}
+
+.popup__button.popup__button_inactive:hover {
+    color: #B6BCBF;
+    background: #E6E8EB;
+}

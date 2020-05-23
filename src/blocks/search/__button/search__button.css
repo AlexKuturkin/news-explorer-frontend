@@ -1,0 +1,35 @@
+@import url(./_inactive/search__button_inactive.css);
+
+.search__button {
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+    position: absolute;
+    width: 168px;
+    height: 64px;
+    right: -2px;
+    border-radius: 100px;
+    border: none;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background-color: #2F71E5;
+    cursor: pointer;
+}
+
+.search__button:focus {
+    outline: 1px solid #347EFF;
+}
+
+.search__button:hover {
+    background-color: #347EFF;
+}
+
+.search__button:active {
+    background-color: #2A65CC;
+}
+
+@media screen and (max-width: 550px) {
+    .search__button {   
+        top: 80px;
+        width: 100%;
+    }
+}

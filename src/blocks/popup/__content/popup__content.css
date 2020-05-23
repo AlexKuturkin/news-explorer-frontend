@@ -1,0 +1,19 @@
+@import url(./_invalid/popup__content_invalid.css);
+
+.popup__content {
+	width: 430px;
+	min-height: 182px;
+	background-color: #FFFFFF;
+	border-radius: 18px;
+	position: relative;
+	box-sizing: border-box;
+	padding: 34px 36px 28px;
+}
+
+@media screen and (max-width: 550px) {
+    .popup__content {   
+		padding: 16px 16px 28px;
+		border-radius: 18px 18px 0 0;
+		height: 94%;
+    }
+}

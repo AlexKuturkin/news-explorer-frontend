@@ -1,0 +1,18 @@
+@media screen and (max-width: 1130px) {
+    .author__picture   {   
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .author__picture   {   
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .author__picture   {   
+        margin-left: 8px;
+    }
+}
